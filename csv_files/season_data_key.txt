@@ -1,0 +1,41 @@
+Also view explanations by holding mouse over column headers
+Rk -- Rank
+Overall
+G -- Games
+W -- Wins
+L -- Losses
+W-L% -- Win-Loss percentage
+SRS -- Simple Rating System
+A rating that takes into account average point differential and strength of schedule. The rating is denominated in points above/below average, where zero is average. Non-Division I games are excluded from the ratings.
+SOS -- Strength of Schedule
+A rating of strength of schedule. The rating is denominated in points above/below average, where zero is average. Non-Division I games are excluded from the ratings.
+Conf.
+W -- Conference Wins
+L -- Conference Losses
+Home
+W -- Wins
+L -- Losses
+Away
+W -- Wins
+L -- Losses
+Points
+Tm. -- Points
+Opp. -- Opponent Points
+School Totals
+MP -- Minutes Played
+FG -- Field Goals
+FGA -- Field Goal Attempts
+FG% -- Field Goal Percentage
+3P -- 3-Point Field Goals
+3PA -- 3-Point Field Goal Attempts
+3P% -- 3-Point Field Goal Percentage
+FT -- Free Throws
+FTA -- Free Throw Attempts
+FT% -- Free Throw Percentage
+ORB -- Offensive Rebounds
+TRB -- Total Rebounds
+AST -- Assists
+STL -- Steals
+BLK -- Blocks
+TOV -- Turnovers
+PF -- Personal Fouls
