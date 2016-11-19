@@ -1,64 +1,64 @@
-Year,Round,Team1,Team2,Winner
-2014,1,Florida,Albany NY,Florida
-2014,2,Florida,Pittsburgh,Florida
-2014,3,Florida,UCLA,Florida
-2014,4,Florida,Dayton,Florida
-2014,5,Florida,Connecticut,Connecticut
-2014,1,Colorado,Pittsburgh,Pittsburgh
-2014,1,VA Commonwealth,SF Austin,SF Austin
-2014,2,SF Austin,UCLA,UCLA
-2014,1,UCLA,Tulsa,UCLA
-2014,1,Ohio St,Dayton,Dayton
-2014,2,Dayton,Syracuse,Dayton
-2014,3,Dayton,Stanford,Dayton
-2014,1,Syracuse,W Michigan,Syracuse
-2014,1,New Mexico,Stanford,Stanford
-2014,2,Stanford,Kansas,Stanford
-2014,1,Kansas,E Kentucky,Kansas
-2014,1,Virginia,Coastal Car,Virginia
-2014,2,Virginia,Memphis,Virginia
-2014,3,Virginia,Michigan St,Michigan St
-2014,1,Memphis,G Washington,Memphis
-2014,1,Cincinnati,Harvard,Harvard
-2014,2,Harvard,Michigan St,Michigan St
-2014,1,Michigan St,Delaware,Michigan St
-2014,4,Michigan St,Connecticut,Connecticut
-2014,1,North Carolina,Providence,North Carolina
-2014,2,North Carolina,Iowa St,Iowa St
-2014,1,Iowa St,NC Central,Iowa St
-2014,3,Iowa St,Connecticut,Connecticut
-2014,1,Connecticut,St Joseph's PA,Connecticut
-2014,2,Connecticut,Villanova,Connecticut
-2014,6,Connecticut,Kentucky,Connecticut
-2014,1,Villanova,WI Milwaukee,Villanova
-2014,1,Arizona,Weber St,Arizona
-2014,2,Arizona,Gonzaga,Arizona
-2014,3,Arizona,San Diego St,Arizona
-2014,4,Arizona,Wisconsin,Wisconsin
-2014,1,Gonzaga,Oklahoma St,Gonzaga
-2014,1,Oklahoma,N Dakota St,N Dakota St
-2014,2,N Dakota St,San Diego St,San Diego St
-2014,1,San Diego St,New Mexico St,San Diego St
-2014,1,Baylor,Nebraska,Baylor
-2014,2,Baylor,Creighton,Baylor
-2014,3,Baylor,Wisconsin,Wisconsin
-2014,1,Creighton,ULL,Creighton
-2014,1,Oregon,BYU,Oregon
-2014,2,Oregon,Wisconsin,Wisconsin
-2014,1,Wisconsin,American Univ,Wisconsin
-2014,5,Wisconsin,Kentucky,Kentucky
-2014,1,Wichita St,Cal Poly SLO,Wichita St
-2014,2,Wichita St,Kentucky,Kentucky
-2014,1,Kentucky,Kansas St,Kentucky
-2014,3,Kentucky,Louisville,Kentucky
-2014,4,Kentucky,Michigan,Kentucky
-2014,1,St Louis,NC State,St Louis
-2014,2,St Louis,Louisville,Louisville
-2014,1,Louisville,Manhattan,Louisville
-2014,1,Massachusetts,Tennessee,Tennessee
-2014,2,Tennessee,Mercer,Tennessee
-2014,3,Tennessee,Michigan,Michigan
-2014,1,Duke,Mercer,Mercer
-2014,1,Texas,Arizona St,Texas
-2014,2,Texas,Michigan,Michigan
-2014,1,Michigan,Wofford,Michigan
+Match Number,Bracket Year,Round Number,Team 1,Team 2,Winner
+1,2014,1,Florida,Albany NY,Florida
+33,2014,2,Florida,Pittsburgh,Florida
+49,2014,3,Florida,UCLA,Florida
+57,2014,4,Florida,Dayton,Florida
+61,2014,5,Florida,Connecticut,Connecticut
+2,2014,1,Colorado,Pittsburgh,Pittsburgh
+3,2014,1,VA Commonwealth,SF Austin,SF Austin
+34,2014,2,SF Austin,UCLA,UCLA
+4,2014,1,UCLA,Tulsa,UCLA
+5,2014,1,Ohio St,Dayton,Dayton
+35,2014,2,Dayton,Syracuse,Dayton
+50,2014,3,Dayton,Stanford,Dayton
+6,2014,1,Syracuse,W Michigan,Syracuse
+7,2014,1,New Mexico,Stanford,Stanford
+36,2014,2,Stanford,Kansas,Stanford
+8,2014,1,Kansas,E Kentucky,Kansas
+9,2014,1,Virginia,Coastal Car,Virginia
+37,2014,2,Virginia,Memphis,Virginia
+51,2014,3,Virginia,Michigan St,Michigan St
+10,2014,1,Memphis,G Washington,Memphis
+11,2014,1,Cincinnati,Harvard,Harvard
+38,2014,2,Harvard,Michigan St,Michigan St
+12,2014,1,Michigan St,Delaware,Michigan St
+58,2014,4,Michigan St,Connecticut,Connecticut
+13,2014,1,North Carolina,Providence,North Carolina
+39,2014,2,North Carolina,Iowa St,Iowa St
+14,2014,1,Iowa St,NC Central,Iowa St
+52,2014,3,Iowa St,Connecticut,Connecticut
+15,2014,1,Connecticut,St Joseph's PA,Connecticut
+40,2014,2,Connecticut,Villanova,Connecticut
+63,2014,6,Connecticut,Kentucky,Connecticut
+16,2014,1,Villanova,WI Milwaukee,Villanova
+17,2014,1,Arizona,Weber St,Arizona
+41,2014,2,Arizona,Gonzaga,Arizona
+53,2014,3,Arizona,San Diego St,Arizona
+59,2014,4,Arizona,Wisconsin,Wisconsin
+18,2014,1,Gonzaga,Oklahoma St,Gonzaga
+19,2014,1,Oklahoma,N Dakota St,N Dakota St
+42,2014,2,N Dakota St,San Diego St,San Diego St
+20,2014,1,San Diego St,New Mexico St,San Diego St
+21,2014,1,Baylor,Nebraska,Baylor
+43,2014,2,Baylor,Creighton,Baylor
+54,2014,3,Baylor,Wisconsin,Wisconsin
+22,2014,1,Creighton,ULL,Creighton
+23,2014,1,Oregon,BYU,Oregon
+44,2014,2,Oregon,Wisconsin,Wisconsin
+24,2014,1,Wisconsin,American Univ,Wisconsin
+62,2014,5,Wisconsin,Kentucky,Kentucky
+25,2014,1,Wichita St,Cal Poly SLO,Wichita St
+45,2014,2,Wichita St,Kentucky,Kentucky
+26,2014,1,Kentucky,Kansas St,Kentucky
+55,2014,3,Kentucky,Louisville,Kentucky
+60,2014,4,Kentucky,Michigan,Kentucky
+27,2014,1,St Louis,NC State,St Louis
+46,2014,2,St Louis,Louisville,Louisville
+28,2014,1,Louisville,Manhattan,Louisville
+29,2014,1,Massachusetts,Tennessee,Tennessee
+47,2014,2,Tennessee,Mercer,Tennessee
+56,2014,3,Tennessee,Michigan,Michigan
+30,2014,1,Duke,Mercer,Mercer
+31,2014,1,Texas,Arizona St,Texas
+48,2014,2,Texas,Michigan,Michigan
+32,2014,1,Michigan,Wofford,Michigan

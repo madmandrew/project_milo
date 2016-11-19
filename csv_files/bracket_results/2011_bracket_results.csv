@@ -1,64 +1,64 @@
-Year,Round,Team1,Team2,Winner
-2011,1,Ohio St,UT San Antonio,Ohio St
-2011,2,Ohio St,George Mason,Ohio St
-2011,3,Ohio St,Kentucky,Kentucky
-2011,1,George Mason,Villanova,George Mason
-2011,1,West Virginia,Clemson,West Virginia
-2011,2,West Virginia,Kentucky,Kentucky
-2011,1,Kentucky,Princeton,Kentucky
-2011,4,Kentucky,North Carolina,Kentucky
-2011,5,Kentucky,Connecticut,Connecticut
-2011,1,Xavier,Marquette,Marquette
-2011,2,Marquette,Syracuse,Marquette
-2011,3,Marquette,North Carolina,North Carolina
-2011,1,Syracuse,Indiana St,Syracuse
-2011,1,Washington,Georgia,Washington
-2011,2,Washington,North Carolina,North Carolina
-2011,1,North Carolina,Long Island,North Carolina
-2011,1,Duke,Hampton,Duke
-2011,2,Duke,Michigan,Duke
-2011,3,Duke,Arizona,Arizona
-2011,1,Michigan,Tennessee,Michigan
-2011,1,Arizona,Memphis,Arizona
-2011,2,Arizona,Texas,Arizona
-2011,4,Arizona,Connecticut,Connecticut
-2011,1,Texas,Oakland,Texas
-2011,1,Cincinnati,Missouri,Cincinnati
-2011,2,Cincinnati,Connecticut,Connecticut
-2011,1,Connecticut,Bucknell,Connecticut
-2011,3,Connecticut,San Diego St,Connecticut
-2011,6,Connecticut,Butler,Connecticut
-2011,1,Temple,Penn St,Temple
-2011,2,Temple,San Diego St,San Diego St
-2011,1,San Diego St,N Colorado,San Diego St
-2011,1,Kansas,Boston Univ,Kansas
-2011,2,Kansas,Illinois,Kansas
-2011,3,Kansas,Richmond,Kansas
-2011,4,Kansas,VA Commonwealth,VA Commonwealth
-2011,1,UNLV,Illinois,Illinois
-2011,1,Vanderbilt,Richmond,Richmond
-2011,2,Richmond,Morehead St,Richmond
-2011,1,Louisville,Morehead St,Morehead St
-2011,1,Georgetown,VA Commonwealth,VA Commonwealth
-2011,2,VA Commonwealth,Purdue,VA Commonwealth
-2011,3,VA Commonwealth,Florida St,VA Commonwealth
-2011,5,VA Commonwealth,Butler,Butler
-2011,1,Purdue,St Peter's,Purdue
-2011,1,Texas A&M,Florida St,Florida St
-2011,2,Florida St,Notre Dame,Florida St
-2011,1,Notre Dame,Akron,Notre Dame
-2011,1,Pittsburgh,UNC Asheville,Pittsburgh
-2011,2,Pittsburgh,Butler,Butler
-2011,1,Butler,Old Dominion,Butler
-2011,3,Butler,Wisconsin,Butler
-2011,4,Butler,Florida,Butler
-2011,1,Kansas St,Utah St,Kansas St
-2011,2,Kansas St,Wisconsin,Wisconsin
-2011,1,Wisconsin,Belmont,Wisconsin
-2011,1,St John's,Gonzaga,Gonzaga
-2011,2,Gonzaga,BYU,BYU
-2011,1,BYU,Wofford,BYU
-2011,3,BYU,Florida,Florida
-2011,1,UCLA,Michigan St,UCLA
-2011,2,UCLA,Florida,Florida
-2011,1,Florida,Santa Barbara,Florida
+Match Number,Bracket Year,Round Number,Team 1,Team 2,Winner
+1,2011,1,Ohio St,UT San Antonio,Ohio St
+33,2011,2,Ohio St,George Mason,Ohio St
+49,2011,3,Ohio St,Kentucky,Kentucky
+2,2011,1,George Mason,Villanova,George Mason
+3,2011,1,West Virginia,Clemson,West Virginia
+34,2011,2,West Virginia,Kentucky,Kentucky
+4,2011,1,Kentucky,Princeton,Kentucky
+57,2011,4,Kentucky,North Carolina,Kentucky
+61,2011,5,Kentucky,Connecticut,Connecticut
+5,2011,1,Xavier,Marquette,Marquette
+35,2011,2,Marquette,Syracuse,Marquette
+50,2011,3,Marquette,North Carolina,North Carolina
+6,2011,1,Syracuse,Indiana St,Syracuse
+7,2011,1,Washington,Georgia,Washington
+36,2011,2,Washington,North Carolina,North Carolina
+8,2011,1,North Carolina,Long Island,North Carolina
+9,2011,1,Duke,Hampton,Duke
+37,2011,2,Duke,Michigan,Duke
+51,2011,3,Duke,Arizona,Arizona
+10,2011,1,Michigan,Tennessee,Michigan
+11,2011,1,Arizona,Memphis,Arizona
+38,2011,2,Arizona,Texas,Arizona
+58,2011,4,Arizona,Connecticut,Connecticut
+12,2011,1,Texas,Oakland,Texas
+13,2011,1,Cincinnati,Missouri,Cincinnati
+39,2011,2,Cincinnati,Connecticut,Connecticut
+14,2011,1,Connecticut,Bucknell,Connecticut
+52,2011,3,Connecticut,San Diego St,Connecticut
+63,2011,6,Connecticut,Butler,Connecticut
+15,2011,1,Temple,Penn St,Temple
+40,2011,2,Temple,San Diego St,San Diego St
+16,2011,1,San Diego St,N Colorado,San Diego St
+17,2011,1,Kansas,Boston Univ,Kansas
+41,2011,2,Kansas,Illinois,Kansas
+53,2011,3,Kansas,Richmond,Kansas
+59,2011,4,Kansas,VA Commonwealth,VA Commonwealth
+18,2011,1,UNLV,Illinois,Illinois
+19,2011,1,Vanderbilt,Richmond,Richmond
+42,2011,2,Richmond,Morehead St,Richmond
+20,2011,1,Louisville,Morehead St,Morehead St
+21,2011,1,Georgetown,VA Commonwealth,VA Commonwealth
+43,2011,2,VA Commonwealth,Purdue,VA Commonwealth
+54,2011,3,VA Commonwealth,Florida St,VA Commonwealth
+62,2011,5,VA Commonwealth,Butler,Butler
+22,2011,1,Purdue,St Peter's,Purdue
+23,2011,1,Texas A&M,Florida St,Florida St
+44,2011,2,Florida St,Notre Dame,Florida St
+24,2011,1,Notre Dame,Akron,Notre Dame
+25,2011,1,Pittsburgh,UNC Asheville,Pittsburgh
+45,2011,2,Pittsburgh,Butler,Butler
+26,2011,1,Butler,Old Dominion,Butler
+55,2011,3,Butler,Wisconsin,Butler
+60,2011,4,Butler,Florida,Butler
+27,2011,1,Kansas St,Utah St,Kansas St
+46,2011,2,Kansas St,Wisconsin,Wisconsin
+28,2011,1,Wisconsin,Belmont,Wisconsin
+29,2011,1,St John's,Gonzaga,Gonzaga
+47,2011,2,Gonzaga,BYU,BYU
+30,2011,1,BYU,Wofford,BYU
+56,2011,3,BYU,Florida,Florida
+31,2011,1,UCLA,Michigan St,UCLA
+48,2011,2,UCLA,Florida,Florida
+32,2011,1,Florida,Santa Barbara,Florida

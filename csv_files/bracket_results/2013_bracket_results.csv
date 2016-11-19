@@ -1,65 +1,65 @@
-Year,Round,Team1,Team2,Winner
-2013,1,Louisville,NC A&T,Louisville
-2013,2,Louisville,Colorado St,Louisville
-2013,3,Louisville,Oregon,Louisville
-2013,4,Louisville,Duke,Louisville
-2013,5,Louisville,Wichita St,Louisville
-2013,6,Louisville,Michigan,Louisville
-2013,1,Colorado St,Missouri,Colorado St
-2013,1,Oklahoma St,Oregon,Oregon
-2013,2,Oregon,St Louis,Oregon
-2013,1,St Louis,New Mexico St,St Louis
-2013,1,Memphis,St Mary's CA,Memphis
-2013,2,Memphis,Michigan St,Michigan St
-2013,1,Michigan St,Valparaiso,Michigan St
-2013,3,Michigan St,Duke,Duke
-2013,1,Creighton,Cincinnati,Creighton
-2013,2,Creighton,Duke,Duke
-2013,1,Duke,Albany NY,Duke
-2013,3,Duke,Miami FL,Duke
-2013,1,Gonzaga,Southern Univ,Gonzaga
-2013,2,Gonzaga,Wichita St,Wichita St
-2013,1,Pittsburgh,Wichita St,Wichita St
-2013,3,Wichita St,La Salle,Wichita St
-2013,4,Wichita St,Ohio St,Wichita St
-2013,1,Wisconsin,Mississippi,Mississippi
-2013,2,Mississippi,La Salle,La Salle
-2013,1,Kansas St,La Salle,La Salle
-2013,1,Arizona,Belmont,Arizona
-2013,2,Arizona,Harvard,Arizona
-2013,3,Arizona,Ohio St,Ohio St
-2013,1,New Mexico,Harvard,Harvard
-2013,1,Notre Dame,Iowa St,Iowa St
-2013,2,Iowa St,Ohio St,Ohio St
-2013,1,Ohio St,Iona,Ohio St
-2013,1,Kansas,WKU,Kansas
-2013,2,Kansas,North Carolina,Kansas
-2013,3,Kansas,Michigan,Michigan
-2013,1,North Carolina,Villanova,North Carolina
-2013,1,VA Commonwealth,Akron,VA Commonwealth
-2013,2,VA Commonwealth,Michigan,Michigan
-2013,1,Michigan,S Dakota St,Michigan
-2013,4,Michigan,Florida,Michigan
-2013,5,Michigan,Syracuse,Michigan
-2013,1,UCLA,Minnesota,Minnesota
-2013,2,Minnesota,Florida,Florida
-2013,1,Florida,Northwestern LA,Florida
-2013,3,Florida,FL Gulf Coast,Florida
-2013,1,San Diego St,Oklahoma,San Diego St
-2013,2,San Diego St,FL Gulf Coast,FL Gulf Coast
-2013,1,Georgetown,FL Gulf Coast,FL Gulf Coast
-2013,1,Indiana,James Madison,Indiana
-2013,2,Indiana,Temple,Indiana
-2013,3,Indiana,Syracuse,Syracuse
-2013,1,NC State,Temple,Temple
-2013,1,UNLV,California,California
-2013,2,California,Syracuse,Syracuse
-2013,1,Syracuse,Montana,Syracuse
-2013,4,Syracuse,Marquette,Syracuse
-2013,1,Butler,Bucknell,Butler
-2013,2,Butler,Marquette,Marquette
-2013,1,Marquette,Davidson,Marquette
-2013,3,Marquette,Miami FL,Marquette
-2013,1,Illinois,Colorado,Illinois
-2013,2,Illinois,Miami FL,Miami FL
-2013,1,Miami FL,Pacific,Miami FL
+Match Number,Bracket Year,Round Number,Team 1,Team 2,Winner
+1,2013,1,Louisville,NC A&T,Louisville
+33,2013,2,Louisville,Colorado St,Louisville
+49,2013,3,Louisville,Oregon,Louisville
+57,2013,4,Louisville,Duke,Louisville
+61,2013,5,Louisville,Wichita St,Louisville
+63,2013,6,Louisville,Michigan,Louisville
+2,2013,1,Colorado St,Missouri,Colorado St
+3,2013,1,Oklahoma St,Oregon,Oregon
+34,2013,2,Oregon,St Louis,Oregon
+4,2013,1,St Louis,New Mexico St,St Louis
+5,2013,1,Memphis,St Mary's CA,Memphis
+35,2013,2,Memphis,Michigan St,Michigan St
+6,2013,1,Michigan St,Valparaiso,Michigan St
+50,2013,3,Michigan St,Duke,Duke
+7,2013,1,Creighton,Cincinnati,Creighton
+36,2013,2,Creighton,Duke,Duke
+8,2013,1,Duke,Albany NY,Duke
+51,2013,3,Duke,Miami FL,Duke
+9,2013,1,Gonzaga,Southern Univ,Gonzaga
+37,2013,2,Gonzaga,Wichita St,Wichita St
+10,2013,1,Pittsburgh,Wichita St,Wichita St
+52,2013,3,Wichita St,La Salle,Wichita St
+58,2013,4,Wichita St,Ohio St,Wichita St
+11,2013,1,Wisconsin,Mississippi,Mississippi
+38,2013,2,Mississippi,La Salle,La Salle
+12,2013,1,Kansas St,La Salle,La Salle
+13,2013,1,Arizona,Belmont,Arizona
+39,2013,2,Arizona,Harvard,Arizona
+53,2013,3,Arizona,Ohio St,Ohio St
+14,2013,1,New Mexico,Harvard,Harvard
+15,2013,1,Notre Dame,Iowa St,Iowa St
+40,2013,2,Iowa St,Ohio St,Ohio St
+16,2013,1,Ohio St,Iona,Ohio St
+17,2013,1,Kansas,WKU,Kansas
+41,2013,2,Kansas,North Carolina,Kansas
+54,2013,3,Kansas,Michigan,Michigan
+18,2013,1,North Carolina,Villanova,North Carolina
+19,2013,1,VA Commonwealth,Akron,VA Commonwealth
+42,2013,2,VA Commonwealth,Michigan,Michigan
+20,2013,1,Michigan,S Dakota St,Michigan
+59,2013,4,Michigan,Florida,Michigan
+62,2013,5,Michigan,Syracuse,Michigan
+21,2013,1,UCLA,Minnesota,Minnesota
+43,2013,2,Minnesota,Florida,Florida
+22,2013,1,Florida,Northwestern LA,Florida
+55,2013,3,Florida,FL Gulf Coast,Florida
+23,2013,1,San Diego St,Oklahoma,San Diego St
+44,2013,2,San Diego St,FL Gulf Coast,FL Gulf Coast
+24,2013,1,Georgetown,FL Gulf Coast,FL Gulf Coast
+25,2013,1,Indiana,James Madison,Indiana
+45,2013,2,Indiana,Temple,Indiana
+56,2013,3,Indiana,Syracuse,Syracuse
+26,2013,1,NC State,Temple,Temple
+27,2013,1,UNLV,California,California
+46,2013,2,California,Syracuse,Syracuse
+28,2013,1,Syracuse,Montana,Syracuse
+60,2013,4,Syracuse,Marquette,Syracuse
+29,2013,1,Butler,Bucknell,Butler
+47,2013,2,Butler,Marquette,Marquette
+30,2013,1,Marquette,Davidson,Marquette
+57,2013,3,Marquette,Miami FL,Marquette
+31,2013,1,Illinois,Colorado,Illinois
+48,2013,2,Illinois,Miami FL,Miami FL
+32,2013,1,Miami FL,Pacific,Miami FL

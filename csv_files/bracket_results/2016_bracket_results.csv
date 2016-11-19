@@ -1,64 +1,64 @@
-Year,Round,Team1,Team2,Winner
-2016,1,Kansas,Austin Peay,Kansas
-2016,2,Kansas,Connecticut,Kansas
-2016,3,Kansas,Maryland,Kansas
-2016,4,Kansas,Villanova,Villanova
-2016,1,Colorado,Connecticut,Connecticut
-2016,1,Maryland,S Dakota St,Maryland
-2016,2,Maryland,Hawaii,Maryland
-2016,1,California,Hawaii,Hawaii
-2016,1,Arizona,Wichita St,Wichita St
-2016,2,Wichita St,Miami FL,Miami FL
-2016,1,Miami FL,Buffalo,Miami FL
-2016,3,Miami FL,Villanova,Villanova
-2016,1,Iowa,Temple,Iowa
-2016,2,Iowa,Villanova,Villanova
-2016,1,Villanova,UNC Asheville,Villanova
-2016,5,Villanova,Oklahoma,Villanova
-2016,6,Villanova,North Carolina,Villanova
-2016,1,Oregon,Holy Cross,Oregon
-2016,2,Oregon,St Joseph's PA,Oregon
-2016,3,Oregon,Duke,Oregon
-2016,4,Oregon,Oklahoma,Oklahoma
-2016,1,St Joseph's PA,Cincinnati,St Joseph's PA
-2016,1,Baylor,Yale,Yale
-2016,2,Yale,Duke,Duke
-2016,1,Duke,UNC Wilmington,Duke
-2016,1,Texas,Northern Iowa,Northern Iowa
-2016,2,Northern Iowa,Texas A&M,Texas A&M
-2016,1,Texas A&M,WI Green Bay,Texas A&M
-2016,3,Texas A&M,Oklahoma,Oklahoma
-2016,1,Oregon St,VA Commonwealth,VA Commonwealth
-2016,2,VA Commonwealth,Oklahoma,Oklahoma
-2016,1,Oklahoma,CS Bakersfield,Oklahoma
-2016,1,North Carolina,FL Gulf Coast,North Carolina
-2016,2,North Carolina,Providence,North Carolina
-2016,3,North Carolina,Indiana,North Carolina
-2016,4,North Carolina,Notre Dame,North Carolina
-2016,5,North Carolina,Syracuse,North Carolina
-2016,1,USC,Providence,Providence
-2016,1,Indiana,Chattanooga,Indiana
-2016,2,Indiana,Kentucky,Indiana
-2016,1,Kentucky,Stony Brook,Kentucky
-2016,1,Notre Dame,Michigan,Notre Dame
-2016,2,Notre Dame,SF Austin,Notre Dame
-2016,3,Notre Dame,Wisconsin,Notre Dame
-2016,1,West Virginia,SF Austin,SF Austin
-2016,1,Wisconsin,Pittsburgh,Wisconsin
-2016,2,Wisconsin,Xavier,Wisconsin
-2016,1,Xavier,Weber St,Xavier
-2016,1,Virginia,Hampton,Virginia
-2016,2,Virginia,Butler,Virginia
-2016,3,Virginia,Iowa St,Virginia
-2016,4,Virginia,Syracuse,Syracuse
-2016,1,Texas Tech,Butler,Butler
-2016,1,Purdue,Ark Little Rock,Ark Little Rock
-2016,2,Ark Little Rock,Iowa St,Iowa St
-2016,1,Iowa St,Iona,Iowa St
-2016,1,Seton Hall,Gonzaga,Gonzaga
-2016,2,Gonzaga,Utah,Gonzaga
-2016,3,Gonzaga,Syracuse,Syracuse
-2016,1,Utah,Fresno St,Utah
-2016,1,Dayton,Syracuse,Syracuse
-2016,2,Syracuse,MTSU,Syracuse
-2016,1,Michigan St,MTSU,MTSU
+Match Number,Bracket Year,Round Number,Team 1,Team 2,Winner
+1,2016,1,Kansas,Austin Peay,Kansas
+33,2016,2,Kansas,Connecticut,Kansas
+49,2016,3,Kansas,Maryland,Kansas
+57,2016,4,Kansas,Villanova,Villanova
+2,2016,1,Colorado,Connecticut,Connecticut
+3,2016,1,Maryland,S Dakota St,Maryland
+34,2016,2,Maryland,Hawaii,Maryland
+4,2016,1,California,Hawaii,Hawaii
+5,2016,1,Arizona,Wichita St,Wichita St
+35,2016,2,Wichita St,Miami FL,Miami FL
+6,2016,1,Miami FL,Buffalo,Miami FL
+50,2016,3,Miami FL,Villanova,Villanova
+7,2016,1,Iowa,Temple,Iowa
+36,2016,2,Iowa,Villanova,Villanova
+8,2016,1,Villanova,UNC Asheville,Villanova
+61,2016,5,Villanova,Oklahoma,Villanova
+63,2016,6,Villanova,North Carolina,Villanova
+9,2016,1,Oregon,Holy Cross,Oregon
+37,2016,2,Oregon,St Joseph's PA,Oregon
+51,2016,3,Oregon,Duke,Oregon
+58,2016,4,Oregon,Oklahoma,Oklahoma
+10,2016,1,St Joseph's PA,Cincinnati,St Joseph's PA
+11,2016,1,Baylor,Yale,Yale
+38,2016,2,Yale,Duke,Duke
+12,2016,1,Duke,UNC Wilmington,Duke
+13,2016,1,Texas,Northern Iowa,Northern Iowa
+39,2016,2,Northern Iowa,Texas A&M,Texas A&M
+14,2016,1,Texas A&M,WI Green Bay,Texas A&M
+52,2016,3,Texas A&M,Oklahoma,Oklahoma
+15,2016,1,Oregon St,VA Commonwealth,VA Commonwealth
+40,2016,2,VA Commonwealth,Oklahoma,Oklahoma
+16,2016,1,Oklahoma,CS Bakersfield,Oklahoma
+17,2016,1,North Carolina,FL Gulf Coast,North Carolina
+41,2016,2,North Carolina,Providence,North Carolina
+53,2016,3,North Carolina,Indiana,North Carolina
+59,2016,4,North Carolina,Notre Dame,North Carolina
+62,2016,5,North Carolina,Syracuse,North Carolina
+18,2016,1,USC,Providence,Providence
+19,2016,1,Indiana,Chattanooga,Indiana
+42,2016,2,Indiana,Kentucky,Indiana
+20,2016,1,Kentucky,Stony Brook,Kentucky
+21,2016,1,Notre Dame,Michigan,Notre Dame
+43,2016,2,Notre Dame,SF Austin,Notre Dame
+54,2016,3,Notre Dame,Wisconsin,Notre Dame
+22,2016,1,West Virginia,SF Austin,SF Austin
+23,2016,1,Wisconsin,Pittsburgh,Wisconsin
+44,2016,2,Wisconsin,Xavier,Wisconsin
+24,2016,1,Xavier,Weber St,Xavier
+25,2016,1,Virginia,Hampton,Virginia
+45,2016,2,Virginia,Butler,Virginia
+55,2016,3,Virginia,Iowa St,Virginia
+60,2016,4,Virginia,Syracuse,Syracuse
+26,2016,1,Texas Tech,Butler,Butler
+27,2016,1,Purdue,Ark Little Rock,Ark Little Rock
+46,2016,2,Ark Little Rock,Iowa St,Iowa St
+28,2016,1,Iowa St,Iona,Iowa St
+29,2016,1,Seton Hall,Gonzaga,Gonzaga
+47,2016,2,Gonzaga,Utah,Gonzaga
+56,2016,3,Gonzaga,Syracuse,Syracuse
+30,2016,1,Utah,Fresno St,Utah
+31,2016,1,Dayton,Syracuse,Syracuse
+48,2016,2,Syracuse,MTSU,Syracuse
+32,2016,1,Michigan St,MTSU,MTSU

@@ -1,66 +1,66 @@
-Year,Round,Team1,Team2,Winner
-2015,1,Kentucky,Hampton,Kentucky
-2015,2,Kentucky,Cincinnati,Kentucky
-2015,3,Kentucky,West Virginia,Kentucky
-2015,4,Kentucky,Notre Dame,Kentucky
-2015,5,Kentucky,Wisconsin,Wisconsin
-2015,1,Cincinnati,Purdue,Cincinnati
-2015,1,Purdue,NC State,NC State
-2015,1,West Virginia,Buffalo,West Virginia
-2015,2,West Virginia,Maryland,West Virginia
-2015,1,Maryland,Valparaiso,Maryland
-2015,1,Butler,Texas,Butler
-2015,2,Butler,Notre Dame,Notre Dame
-2015,1,Notre Dame,Northeastern,Notre Dame
-2015,3,Notre Dame,Wichita St,Notre Dame
-2015,1,Wichita St,Indiana,Wichita St
-2015,2,Wichita St,Kansas,Wichita St
-2015,1,Kansas,New Mexico St,Kansas
-2015,1,Wisconsin,Coastal Car,Wisconsin
-2015,2,Wisconsin,Oregon,Wisconsin
-2015,3,Wisconsin,North Carolina,Wisconsin
-2015,4,Wisconsin,Arizona,Wisconsin
-2015,6,Wisconsin,Duke,Duke
-2015,1,Oregon,Oklahoma St,Oregon
-2015,1,Arkansas,Wofford,Arkansas
-2015,2,Arkansas,North Carolina,North Carolina
-2015,1,North Carolina,Harvard,North Carolina
-2015,1,Xavier,Mississippi,Xavier
-2015,2,Xavier,Georgia St,Xavier
-2015,3,Xavier,Arizona,Arizona
-2015,1,Baylor,Georgia St,Georgia St
-2015,1,VA Commonwealth,Ohio St,Ohio St
-2015,2,Ohio St,Arizona,Arizona
-2015,1,Arizona,TX Southern,Arizona
-2015,1,Villanova,Lafayette,Villanova
-2015,2,Villanova,NC State,NC State
-2015,1,NC State,LSU,NC State
-2015,3,NC State,Louisville,Louisville
-2015,1,Northern Iowa,Wyoming,Northern Iowa
-2015,2,Northern Iowa,Louisville,Louisville
-2015,1,Louisville,UC Irvine,Louisville
-2015,4,Louisville,Michigan St,Michigan St
-2015,1,Providence,Dayton,Dayton
-2015,2,Dayton,Oklahoma,Oklahoma
-2015,1,Oklahoma,Albany NY,Oklahoma
-2015,3,Oklahoma,Michigan St,Michigan St
-2015,1,Michigan St,Georgia,Michigan St
-2015,2,Michigan St,Virginia,Michigan St
-2015,5,Michigan St,Duke,Duke
-2015,1,Virginia,Belmont,Virginia
-2015,1,Duke,Robert Morris,Duke
-2015,2,Duke,San Diego St,Duke
-2015,3,Duke,Utah,Duke
-2015,4,Duke,Gonzaga,Duke
-2015,1,San Diego St,St John's,San Diego St
-2015,1,Utah,SF Austin,Utah
-2015,2,Utah,Georgetown,Utah
-2015,1,Georgetown,E Washington,Georgetown
-2015,1,SMU,UCLA,UCLA
-2015,1,UCLA,Iowa St,UCLA
-2015,2,UCLA,UAB,UCLA
-2015,3,UCLA,Gonzaga,Gonzaga
-2015,1,Iowa St,UAB,UAB
-2015,1,Iowa,Davidson,Iowa
-2015,2,Iowa,Gonzaga,Gonzaga
-2015,1,Gonzaga,N Dakota St,Gonzaga
+Match Number,Bracket Year,Round Number,Team 1,Team 2,Winner
+1,2015,1,Kentucky,Hampton,Kentucky
+33,2015,2,Kentucky,Cincinnati,Kentucky
+49,2015,3,Kentucky,West Virginia,Kentucky
+57,2015,4,Kentucky,Notre Dame,Kentucky
+61,2015,5,Kentucky,Wisconsin,Wisconsin
+2,2015,1,Cincinnati,Purdue,Cincinnati
+3,2015,1,Purdue,NC State,NC State
+4,2015,1,West Virginia,Buffalo,West Virginia
+34,2015,2,West Virginia,Maryland,West Virginia
+5,2015,1,Maryland,Valparaiso,Maryland
+6,2015,1,Butler,Texas,Butler
+35,2015,2,Butler,Notre Dame,Notre Dame
+7,2015,1,Notre Dame,Northeastern,Notre Dame
+50,2015,3,Notre Dame,Wichita St,Notre Dame
+8,2015,1,Wichita St,Indiana,Wichita St
+36,2015,2,Wichita St,Kansas,Wichita St
+9,2015,1,Kansas,New Mexico St,Kansas
+10,2015,1,Wisconsin,Coastal Car,Wisconsin
+37,2015,2,Wisconsin,Oregon,Wisconsin
+51,2015,3,Wisconsin,North Carolina,Wisconsin
+58,2015,4,Wisconsin,Arizona,Wisconsin
+63,2015,6,Wisconsin,Duke,Duke
+11,2015,1,Oregon,Oklahoma St,Oregon
+12,2015,1,Arkansas,Wofford,Arkansas
+38,2015,2,Arkansas,North Carolina,North Carolina
+13,2015,1,North Carolina,Harvard,North Carolina
+14,2015,1,Xavier,Mississippi,Xavier
+39,2015,2,Xavier,Georgia St,Xavier
+52,2015,3,Xavier,Arizona,Arizona
+15,2015,1,Baylor,Georgia St,Georgia St
+16,2015,1,VA Commonwealth,Ohio St,Ohio St
+40,2015,2,Ohio St,Arizona,Arizona
+17,2015,1,Arizona,TX Southern,Arizona
+18,2015,1,Villanova,Lafayette,Villanova
+41,2015,2,Villanova,NC State,NC State
+19,2015,1,NC State,LSU,NC State
+53,2015,3,NC State,Louisville,Louisville
+20,2015,1,Northern Iowa,Wyoming,Northern Iowa
+42,2015,2,Northern Iowa,Louisville,Louisville
+21,2015,1,Louisville,UC Irvine,Louisville
+59,2015,4,Louisville,Michigan St,Michigan St
+22,2015,1,Providence,Dayton,Dayton
+43,2015,2,Dayton,Oklahoma,Oklahoma
+23,2015,1,Oklahoma,Albany NY,Oklahoma
+54,2015,3,Oklahoma,Michigan St,Michigan St
+24,2015,1,Michigan St,Georgia,Michigan St
+44,2015,2,Michigan St,Virginia,Michigan St
+62,2015,5,Michigan St,Duke,Duke
+25,2015,1,Virginia,Belmont,Virginia
+26,2015,1,Duke,Robert Morris,Duke
+45,2015,2,Duke,San Diego St,Duke
+55,2015,3,Duke,Utah,Duke
+60,2015,4,Duke,Gonzaga,Duke
+27,2015,1,San Diego St,St John's,San Diego St
+28,2015,1,Utah,SF Austin,Utah
+46,2015,2,Utah,Georgetown,Utah
+29,2015,1,Georgetown,E Washington,Georgetown
+30,2015,1,SMU,UCLA,UCLA
+31,2015,1,UCLA,Iowa St,UCLA
+47,2015,2,UCLA,UAB,UCLA
+56,2015,3,UCLA,Gonzaga,Gonzaga
+32,2015,1,Iowa St,UAB,UAB
+33,2015,1,Iowa,Davidson,Iowa
+48,2015,2,Iowa,Gonzaga,Gonzaga
+34,2015,1,Gonzaga,N Dakota St,Gonzaga

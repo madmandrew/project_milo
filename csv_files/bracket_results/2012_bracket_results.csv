@@ -1,65 +1,65 @@
-Year,Round,Team1,Team2,Winner
-2012,1,Kentucky,WKU,Kentucky
-2012,2,Kentucky,Iowa St,Kentucky
-2012,3,Kentucky,Indiana,Kentucky
-2012,4,Kentucky,Baylor,Kentucky
-2012,5,Kentucky,Louisville,Kentucky
-2012,6,Kentucky,Kansas,Kentucky
-2012,1,Iowa St,Connecticut,Iowa St
-2012,1,Wichita St,VA Commonwealth,VA Commonwealth
-2012,2,VA Commonwealth,Indiana,Indiana
-2012,1,Indiana,New Mexico St,Indiana
-2012,1,UNLV,Colorado,Colorado
-2012,2,Colorado,Baylor,Baylor
-2012,1,Baylor,S Dakota St,Baylor
-2012,3,Baylor,Xavier,Baylor
-2012,1,Notre Dame,Xavier,Xavier
-2012,2,Xavier,Lehigh,Xavier
-2012,1,Duke,Lehigh,Lehigh
-2012,1,Michigan St,Long Island,Michigan St
-2012,2,Michigan St,St Louis,Michigan St
-2012,3,Michigan St,Louisville,Louisville
-2012,1,Memphis,St Louis,St Louis
-2012,1,New Mexico,Long Beach St,New Mexico
-2012,2,New Mexico,Louisville,Louisville
-2012,1,Louisville,Davidson,Louisville
-2012,4,Louisville,Florida,Louisville
-2012,1,Murray St,Colorado St,Murray St
-2012,2,Murray St,Marquette,Marquette
-2012,1,Marquette,BYU,Marquette
-2012,3,Marquette,Florida,Florida
-2012,1,Florida,Virginia,Florida
-2012,2,Florida,Norfolk St,Florida
-2012,1,Missouri,Norfolk St,Norfolk St
-2012,1,Syracuse,UNC Asheville,Syracuse
-2012,2,Syracuse,Kansas St,Syracuse
-2012,3,Syracuse,Wisconsin,Syracuse
-2012,4,Syracuse,Ohio St,Ohio St
-2012,1,Kansas St,Southern Miss,Kansas St
-2012,1,Vanderbilt,Harvard,Vanderbilt
-2012,2,Vanderbilt,Wisconsin,Wisconsin
-2012,1,Wisconsin,Montana,Wisconsin
-2012,1,Cincinnati,Texas,Cincinnati
-2012,2,Cincinnati,Florida St,Cincinnati
-2012,3,Cincinnati,Ohio St,Ohio St
-2012,1,Florida St,St Bonaventure,Florida St
-2012,2,Florida St,Ohio,Ohio
-2012,1,Gonzaga,West Virginia,Gonzaga
-2012,2,Gonzaga,Ohio St,Ohio St
-2012,1,Ohio St,Loyola MD,Ohio St
-2012,5,Ohio St,Kansas,Kansas
-2012,1,North Carolina,Vermont,North Carolina
-2012,2,North Carolina,Creighton,North Carolina
-2012,3,North Carolina,Ohio,North Carolina
-2012,4,North Carolina,Kansas,Kansas
-2012,1,Creighton,Alabama,Creighton
-2012,1,Temple,South Florida,South Florida
-2012,2,South Florida,Ohio,Ohio
-2012,1,Michigan,Ohio,Ohio
-2012,1,San Diego St,NC State,NC State
-2012,2,NC State,Georgetown,NC State
-2012,3,NC State,Kansas,Kansas
-2012,1,Georgetown,Belmont,Georgetown
-2012,1,St Mary's CA,Purdue,Purdue
-2012,2,Purdue,Kansas,Kansas
-2012,1,Kansas,Detroit,Kansas
+Match Number,Bracket Year,Round Number,Team 1,Team 2,Winner
+1,2012,1,Kentucky,WKU,Kentucky
+33,2012,2,Kentucky,Iowa St,Kentucky
+49,2012,3,Kentucky,Indiana,Kentucky
+57,2012,4,Kentucky,Baylor,Kentucky
+61,2012,5,Kentucky,Louisville,Kentucky
+63,2012,6,Kentucky,Kansas,Kentucky
+2,2012,1,Iowa St,Connecticut,Iowa St
+3,2012,1,Wichita St,VA Commonwealth,VA Commonwealth
+34,2012,2,VA Commonwealth,Indiana,Indiana
+4,2012,1,Indiana,New Mexico St,Indiana
+5,2012,1,UNLV,Colorado,Colorado
+35,2012,2,Colorado,Baylor,Baylor
+6,2012,1,Baylor,S Dakota St,Baylor
+50,2012,3,Baylor,Xavier,Baylor
+7,2012,1,Notre Dame,Xavier,Xavier
+36,2012,2,Xavier,Lehigh,Xavier
+8,2012,1,Duke,Lehigh,Lehigh
+9,2012,1,Michigan St,Long Island,Michigan St
+37,2012,2,Michigan St,St Louis,Michigan St
+51,2012,3,Michigan St,Louisville,Louisville
+10,2012,1,Memphis,St Louis,St Louis
+11,2012,1,New Mexico,Long Beach St,New Mexico
+38,2012,2,New Mexico,Louisville,Louisville
+12,2012,1,Louisville,Davidson,Louisville
+58,2012,4,Louisville,Florida,Louisville
+13,2012,1,Murray St,Colorado St,Murray St
+39,2012,2,Murray St,Marquette,Marquette
+14,2012,1,Marquette,BYU,Marquette
+52,2012,3,Marquette,Florida,Florida
+15,2012,1,Florida,Virginia,Florida
+40,2012,2,Florida,Norfolk St,Florida
+16,2012,1,Missouri,Norfolk St,Norfolk St
+17,2012,1,Syracuse,UNC Asheville,Syracuse
+41,2012,2,Syracuse,Kansas St,Syracuse
+53,2012,3,Syracuse,Wisconsin,Syracuse
+59,2012,4,Syracuse,Ohio St,Ohio St
+18,2012,1,Kansas St,Southern Miss,Kansas St
+19,2012,1,Vanderbilt,Harvard,Vanderbilt
+42,2012,2,Vanderbilt,Wisconsin,Wisconsin
+20,2012,1,Wisconsin,Montana,Wisconsin
+21,2012,1,Cincinnati,Texas,Cincinnati
+43,2012,2,Cincinnati,Florida St,Cincinnati
+54,2012,3,Cincinnati,Ohio St,Ohio St
+22,2012,1,Florida St,St Bonaventure,Florida St
+44,2012,2,Florida St,Ohio,Ohio
+23,2012,1,Gonzaga,West Virginia,Gonzaga
+45,2012,2,Gonzaga,Ohio St,Ohio St
+24,2012,1,Ohio St,Loyola MD,Ohio St
+62,2012,5,Ohio St,Kansas,Kansas
+25,2012,1,North Carolina,Vermont,North Carolina
+46,2012,2,North Carolina,Creighton,North Carolina
+55,2012,3,North Carolina,Ohio,North Carolina
+60,2012,4,North Carolina,Kansas,Kansas
+26,2012,1,Creighton,Alabama,Creighton
+27,2012,1,Temple,South Florida,South Florida
+47,2012,2,South Florida,Ohio,Ohio
+28,2012,1,Michigan,Ohio,Ohio
+29,2012,1,San Diego St,NC State,NC State
+48,2012,2,NC State,Georgetown,NC State
+56,2012,3,NC State,Kansas,Kansas
+30,2012,1,Georgetown,Belmont,Georgetown
+31,2012,1,St Mary's CA,Purdue,Purdue
+49,2012,2,Purdue,Kansas,Kansas
+32,2012,1,Kansas,Detroit,Kansas

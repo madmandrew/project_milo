@@ -1,64 +1,64 @@
-Year,Round,Team1,Team2,Winner
-2010,1,Kansas,Lehigh,Kansas
-2010,2,Kansas,Northern Iowa,Northern Iowa
-2010,1,UNLV,Northern Iowa,Northern Iowa
-2010,3,Northern Iowa,Michigan St,Michigan St
-2010,1,Michigan St,New Mexico St,Michigan St
-2010,2,Michigan St,Maryland,Michigan St
-2010,4,Michigan St,Tennessee,Michigan St
-2010,5,Michigan St,Butler,Butler
-2010,1,Maryland,Houston,Maryland
-2010,1,Tennessee,San Diego St,Tennessee
-2010,2,Tennessee,Ohio,Tennessee
-2010,3,Tennessee,Ohio St,Tennessee
-2010,1,Georgetown,Ohio,Ohio
-2010,1,Oklahoma St,Georgia Tech,Georgia Tech
-2010,2,Georgia Tech,Ohio St,Ohio St
-2010,1,Ohio St,Santa Barbara,Ohio St
-2010,1,Syracuse,Vermont,Syracuse
-2010,2,Syracuse,Gonzaga,Syracuse
-2010,3,Syracuse,Butler,Butler
-2010,1,Gonzaga,Florida St,Gonzaga
-2010,1,Butler,UTEP,Butler
-2010,2,Butler,Murray St,Butler
-2010,4,Butler,Kansas St,Butler
-2010,6,Butler,Duke,Duke
-2010,1,Vanderbilt,Murray St,Murray St
-2010,1,Xavier,Minnesota,Xavier
-2010,2,Xavier,Pittsburgh,Xavier
-2010,3,Xavier,Kansas St,Kansas St
-2010,1,Pittsburgh,Oakland,Pittsburgh
-2010,1,BYU,Florida,BYU
-2010,2,BYU,Kansas St,Kansas St
-2010,1,Kansas St,North Texas,Kansas St
-2010,1,Kentucky,ETSU,Kentucky
-2010,2,Kentucky,Wake Forest,Kentucky
-2010,3,Kentucky,Cornell,Kentucky
-2010,4,Kentucky,West Virginia,West Virginia
-2010,1,Texas,Wake Forest,Wake Forest
-2010,1,Temple,Cornell,Cornell
-2010,2,Cornell,Wisconsin,Cornell
-2010,1,Wisconsin,Wofford,Wisconsin
-2010,1,Marquette,Washington,Washington
-2010,2,Washington,New Mexico,Washington
-2010,3,Washington,West Virginia,West Virginia
-2010,1,New Mexico,Montana,New Mexico
-2010,1,Clemson,Missouri,Missouri
-2010,2,Missouri,West Virginia,West Virginia
-2010,1,West Virginia,Morgan St,West Virginia
-2010,5,West Virginia,Duke,Duke
-2010,1,Duke,Ark Pine Bluff,Duke
-2010,2,Duke,California,Duke
-2010,3,Duke,Purdue,Duke
-2010,4,Duke,Baylor,Duke
-2010,1,California,Louisville,California
-2010,1,Texas A&M,Utah St,Texas A&M
-2010,2,Texas A&M,Purdue,Purdue
-2010,1,Purdue,Siena,Purdue
-2010,1,Notre Dame,Old Dominion,Old Dominion
-2010,2,Old Dominion,Baylor,Baylor
-2010,1,Baylor,Sam Houston St,Baylor
-2010,3,Baylor,St Mary's CA,Baylor
-2010,1,Richmond,St Mary's CA,St Mary's CA
-2010,2,St Mary's CA,Villanova,St Mary's CA
-2010,1,Villanova,Robert Morris,Villanova
+Match Number,Bracket Year,Round Number,Team 1,Team 2,Winner
+1,2010,1,Kansas,Lehigh,Kansas
+33,2010,2,Kansas,Northern Iowa,Northern Iowa
+2,2010,1,UNLV,Northern Iowa,Northern Iowa
+49,2010,3,Northern Iowa,Michigan St,Michigan St
+3,2010,1,Michigan St,New Mexico St,Michigan St
+34,2010,2,Michigan St,Maryland,Michigan St
+57,2010,4,Michigan St,Tennessee,Michigan St
+61,2010,5,Michigan St,Butler,Butler
+4,2010,1,Maryland,Houston,Maryland
+5,2010,1,Tennessee,San Diego St,Tennessee
+35,2010,2,Tennessee,Ohio,Tennessee
+50,2010,3,Tennessee,Ohio St,Tennessee
+6,2010,1,Georgetown,Ohio,Ohio
+7,2010,1,Oklahoma St,Georgia Tech,Georgia Tech
+36,2010,2,Georgia Tech,Ohio St,Ohio St
+8,2010,1,Ohio St,Santa Barbara,Ohio St
+9,2010,1,Syracuse,Vermont,Syracuse
+37,2010,2,Syracuse,Gonzaga,Syracuse
+51,2010,3,Syracuse,Butler,Butler
+10,2010,1,Gonzaga,Florida St,Gonzaga
+11,2010,1,Butler,UTEP,Butler
+38,2010,2,Butler,Murray St,Butler
+58,2010,4,Butler,Kansas St,Butler
+63,2010,6,Butler,Duke,Duke
+12,2010,1,Vanderbilt,Murray St,Murray St
+13,2010,1,Xavier,Minnesota,Xavier
+39,2010,2,Xavier,Pittsburgh,Xavier
+52,2010,3,Xavier,Kansas St,Kansas St
+14,2010,1,Pittsburgh,Oakland,Pittsburgh
+15,2010,1,BYU,Florida,BYU
+40,2010,2,BYU,Kansas St,Kansas St
+16,2010,1,Kansas St,North Texas,Kansas St
+17,2010,1,Kentucky,ETSU,Kentucky
+41,2010,2,Kentucky,Wake Forest,Kentucky
+53,2010,3,Kentucky,Cornell,Kentucky
+59,2010,4,Kentucky,West Virginia,West Virginia
+18,2010,1,Texas,Wake Forest,Wake Forest
+19,2010,1,Temple,Cornell,Cornell
+42,2010,2,Cornell,Wisconsin,Cornell
+20,2010,1,Wisconsin,Wofford,Wisconsin
+21,2010,1,Marquette,Washington,Washington
+43,2010,2,Washington,New Mexico,Washington
+54,2010,3,Washington,West Virginia,West Virginia
+22,2010,1,New Mexico,Montana,New Mexico
+23,2010,1,Clemson,Missouri,Missouri
+44,2010,2,Missouri,West Virginia,West Virginia
+24,2010,1,West Virginia,Morgan St,West Virginia
+62,2010,5,West Virginia,Duke,Duke
+25,2010,1,Duke,Ark Pine Bluff,Duke
+45,2010,2,Duke,California,Duke
+55,2010,3,Duke,Purdue,Duke
+60,2010,4,Duke,Baylor,Duke
+26,2010,1,California,Louisville,California
+27,2010,1,Texas A&M,Utah St,Texas A&M
+46,2010,2,Texas A&M,Purdue,Purdue
+28,2010,1,Purdue,Siena,Purdue
+29,2010,1,Notre Dame,Old Dominion,Old Dominion
+47,2010,2,Old Dominion,Baylor,Baylor
+30,2010,1,Baylor,Sam Houston St,Baylor
+56,2010,3,Baylor,St Mary's CA,Baylor
+31,2010,1,Richmond,St Mary's CA,St Mary's CA
+48,2010,2,St Mary's CA,Villanova,St Mary's CA
+32,2010,1,Villanova,Robert Morris,Villanova
