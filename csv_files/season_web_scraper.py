@@ -8,7 +8,7 @@ path_to_project = "C:\\Users\\andrew\\PycharmProjects\\"
 
 soup = BeautifulSoup(open("{}project_milo\\csv_files\\season_html_source\\{}_{}.html".format(path_to_project, bracketYear, file_type)))
 
-file = open("{}project_milo\\csv_files\\new_season_files\\{}_{}.csv".format(path_to_project, bracketYear, file_type), "w")
+file = open("{}project_milo\\csv_files\\season_files\\{}_{}.csv".format(path_to_project, bracketYear, file_type), "w")
 
 
 tableRows = soup.find("table", id="table-{}".format(table_id)).find("tbody").find_all('tr')
