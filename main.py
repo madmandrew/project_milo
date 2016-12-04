@@ -1,8 +1,36 @@
 from sklearn.neural_network import MLPClassifier
 from pymongo import MongoClient
 
-def get_training_data(year):
+def get_team_name_lookup():
+    teamNameMap = {"N Colorado": "Northern Colorado", "Boston Univ": "Boston College", "VA Commonwealth": "VCU",
+                   "St Peter's": "Saint Peter's", "St John's": "St. John's", "BYU": "Brigham Young",
+                   "Santa Barbara": "UC Santa Barbara", "WKU": "Western Kentucky", "S Dakota St": "South Dakota",
+                   "St Louis": "Saint Louis", "Southern Miss": "Southern Mississippi",
+                   "St Bonaventure": "St. Bonaventure", "Loyola MD": "Loyola Marymount", "NC State": "North Carolina",
+                   "St Mary's CA": "Saint Mary's", "NC A&T": "North Carolina A&T", "Albany NY": "Albany",
+                   "Miami FL": "Miami (FL)", "Southern Univ": "Southern", "Mississippi": "Mississippi State",
+                   "Northwestern LA": "Northwestern State", "FL Gulf Coast": "Florida Gulf Coast",
+                   "SF Austin": "Stephen F. Austin", "W Michigan": "Western Michigan", "E Kentucky": "Eastern Kentucky",
+                   "Coastal Car": "Coastal Carolina", "G Washington": "George Washington",
+                   "NC Central": "North Carolina Central", "St Joseph's PA": "Saint Joseph's",
+                   "WI Milwaukee": "Milwaukee", "N Dakota St": "North Dakota State", "ULL": "Louisiana-Lafayette ",
+                   "American Univ": "American University", "Cal Poly SLO": "Cal Poly", "TX Southern": "Texas Southern",
+                   "E Washington": "Eastern Washington", "SMU": "Southern Methodist", "WI Green Bay": "Green Bay",
+                   "CS Bakersfield": "Cal State Bakersfield", "Ark Little Rock": "Little Rock",
+                   "MTSU": "Middle Tennessee State", "UT San Antonio": "Texas-San Antonio",
+                   "Indiana St": "Indiana State", "San Diego St": "San Diego State", "Penn St": "Penn State",
+                   "Morehead St": "Morehead State", "Florida St": "Florida State", "Kansas St": "Kansas State",
+                   "Utah St": "Utah State", "Michigan St": "Michigan State", "Iowa St": "Iowa State",
+                   "Wichita St": "Wichita State", "New Mexico St": "New Mexico State",
+                   "Long Beach St": "Long Beach State", "Murray St": "Murray State", "Colorado St": "Colorado State",
+                   "Norfolk St": "Norfolk State", "Ohio St": "Ohio State", "Oklahoma St": "Oklahoma State",
+                   "Weber St": "Weber State", "Arizona St": "Arizona State", "Georgia St": "Georgia State",
+                   "Oregon St": "Oregon State", "Fresno St": "Fresno State"}
+    return teamNameMap
+
+def get_training_data(year, isTestData):
     """Pull data from the db and creates training features based on match ups"""
+    teamNameLookup = get_team_name_lookup()
 
     # Connect to db
     client = MongoClient('localhost:27017')
@@ -13,16 +41,27 @@ def get_training_data(year):
 
     # For each match in march madness of the given year (find all the teams that played in the tournament that year)
     for match in db.tournament_stats.find({'Bracket Year': year}):
-        # Grab the regular season stats of the two teams that played each other
-        team_one = db.reg_season_stats.find_one({'Year': year, "Team": match['Team 1']})
-        team_two = db.reg_season_stats.find_one({'Year': year, "Team": match['Team 2']})
+        # if its training data we only grab first round matches
+        if (not isTestData or int(match['Match Number']) < 33):
 
-        # Make sure they were actually playing each other that round
-        if (team_one is not None and team_two is not None):
-            # Add them to the data (the two team's stats and who won
-            match_up = (team_one, team_two)
-            training_features.append(match_up)
-            training_targets.append(match['Winner'])
+            team_name_one = teamNameLookup[match['Team 1']] if match['Team 1'] in teamNameLookup else match['Team 1']
+            team_name_two = teamNameLookup[match['Team 2']] if match['Team 2'] in teamNameLookup else match['Team 2']
+
+            # Grab the regular season stats of the two teams that played each other
+            team_one = db.reg_season_stats.find_one({'Year': year, "Team": team_name_one})
+            team_two = db.reg_season_stats.find_one({'Year': year, "Team": team_name_two})
+
+            if team_one is None:
+                print(match['Team 1'])
+            if team_two is None:
+                print(match['Team 2'])
+
+            # Make sure they were actually playing each other that round
+            if (team_one is not None and team_two is not None):
+                # Add them to the data (the two team's stats and who won
+                match_up = (team_one, team_two)
+                training_features.append(match_up)
+                training_targets.append(match['Winner'])
 
     return training_features, training_targets
 
@@ -85,7 +124,7 @@ def convert_and_order_data(feature, target):
 
 def train_neural_network():
 
-    training_years = ['2011', '2012', '2013', '2014', '2015', '2016']
+    training_years = ['2011', '2012', '2013', '2014', '2015']
 
     # Create the neural network
     # http://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier
@@ -94,7 +133,7 @@ def train_neural_network():
                                    random_state=1)
 
     for year in training_years:
-        training_features, training_targets = get_training_data(year)
+        training_features, training_targets = get_training_data(year, isTestData=False)
 
         nn_inputs = []
         nn_targets = []
@@ -110,6 +149,13 @@ def train_neural_network():
         # Train the neural Network
         neural_network.fit(nn_inputs, nn_targets)
 
+def predict():
+    training_features, training_targets = get_training_data('2016', isTestData=True)
+
+    print("TEST")
+
+
 if __name__ == "__main__":
     print("Starting Neural Network")
     train_neural_network()
+    predict()
