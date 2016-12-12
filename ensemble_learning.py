@@ -19,19 +19,27 @@ class EnsembleLearning(object):
         training_features, training_targets = self.get_data()
 
         if ada_boost:
+            print("Ada Boost: ", end="")
             self.ada_boost_train(training_features, training_targets)
+            self.predict(ada_boost=True)
         if bagging:
+            print("Bagging: ", end="")
             self.bagging_train(training_features, training_targets)
+            self.predict(bagging=True)
         if random_forests:
+            print("Random Forests: ", end="")
             self.random_forest_train(training_features, training_targets)
+            self.predict(random_forests=True)
         if neural_network:
+            print("Neural Network: ", end="")
             self.neural_network_train(training_features, training_targets)
+            self.predict(neural_network=True)
 
-        self.predict()
+
 
     def neural_network_train(self, X, Y):
         network = MLPClassifier(hidden_layer_sizes=[16, 16, 16, 2], activation='logistic', solver='lbfgs', alpha=1e-05,
-                      learning_rate_init=0.0001, max_iter=1500, random_state=1)
+                      learning_rate_init=0.001, max_iter=1300, random_state=1)
 
         self.neural_network = network.fit(X, Y)
 
@@ -58,15 +66,14 @@ class EnsembleLearning(object):
     def ada_boost_train(self, X, Y):
 
         # Default is Decision Tree
-        bdt = AdaBoostClassifier(algorithm="SAMME", n_estimators=200)
+        # bdt = AdaBoostClassifier(algorithm="SAMME", n_estimators=200)
 
         # SVM
-        # bdt = AdaBoostClassifier(svm.SVC(), algorithm="SAMME", n_estimators=200)
+        bdt = AdaBoostClassifier(svm.SVC(), algorithm="SAMME", n_estimators=200)
 
         self.ada_boost = bdt.fit(X, Y)
 
     def predict(self, ada_boost=False, bagging=False, random_forests=False, neural_network=False):
-        algorithm = self.neural_network;
         if ada_boost:
             algorithm = self.ada_boost
         if bagging:
@@ -78,17 +85,12 @@ class EnsembleLearning(object):
 
         testing_features, testing_targets = self.get_data(training_data=False)
 
-        # num_correct = 0
-        # for index, guess in enumerate(algorithm.predict(testing_features)):
-        #     if guess == testing_targets[index]:
-        #         num_correct += 1
-        #
-        # print(num_correct / len(testing_targets))
+        num_correct = 0
+        for index, guess in enumerate(algorithm.predict(testing_features)):
+            if guess == testing_targets[index]:
+                num_correct += 1
 
-        for index, match_up in enumerate(testing_features):
-            winnerIndex = self.neural_network.predict(match_up)[0]
-            winnerName = winnerIndex
-            print("Predicted: {} | Actual: {}".format(winnerName, testing_targets[index]))
+        print(num_correct / len(testing_targets))
 
     def get_data(self, training_data=True):
 
@@ -106,25 +108,21 @@ class EnsembleLearning(object):
         for year in years:
             # For each match in march madness of the given year (find all the teams that played in the tournament that year)
             for match in db.tournament_stats.find({'Bracket Year': year}):
+                team_one_name = self.team_name_lookup[match['Team 1']] if match['Team 1'] in self.team_name_lookup else \
+                match['Team 1']
+                team_two_name = self.team_name_lookup[match['Team 2']] if match['Team 2'] in self.team_name_lookup else \
+                match['Team 2']
 
-                # Only grab first round matches (one of the first 64 games
-                if (int(match['Match Number']) < 33):
+                # Grab the regular season stats of the two teams that played each other
+                team_one_stats = db.reg_season_stats.find_one({'Year': year, "Team": team_one_name})
+                team_two_stats = db.reg_season_stats.find_one({'Year': year, "Team": team_two_name})
 
-                    team_one_name = self.team_name_lookup[match['Team 1']] if match['Team 1'] in self.team_name_lookup else \
-                    match['Team 1']
-                    team_two_name = self.team_name_lookup[match['Team 2']] if match['Team 2'] in self.team_name_lookup else \
-                    match['Team 2']
+                # Order the attributes by sticking it into an array. Map winner to team one or team two (0 or 1)
+                training_feature, training_target = self.convert_and_order_data((team_one_stats, team_two_stats), match['Winner'])
 
-                    # Grab the regular season stats of the two teams that played each other
-                    team_one_stats = db.reg_season_stats.find_one({'Year': year, "Team": team_one_name})
-                    team_two_stats = db.reg_season_stats.find_one({'Year': year, "Team": team_two_name})
-
-                    # Order the attributes by sticking it into an array. Map winner to team one or team two (0 or 1)
-                    training_feature, training_target = self.convert_and_order_data((team_one_stats, team_two_stats), match['Winner'])
-
-                    # Add them to the data (the two team's stats and who won
-                    training_features.append(training_feature)
-                    training_targets.append(training_target)
+                # Add them to the data (the two team's stats and who won
+                training_features.append(training_feature)
+                training_targets.append(training_target)
 
         return training_features, training_targets
 
@@ -213,4 +211,4 @@ class EnsembleLearning(object):
 if __name__ == "__main__":
     print("Starting Ensemble Learning")
 
-    EnsembleLearning(ada_boost=False, bagging=False, random_forests=False, neural_network=True)
+    EnsembleLearning(ada_boost=True, bagging=True, random_forests=True, neural_network=True)
