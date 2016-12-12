@@ -6,8 +6,8 @@ class MadnessPredictor(object):
     def __init__(self, layers):
         # Create the neural network
         # http://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier
-        self.neural_network = MLPClassifier(hidden_layer_sizes=(layers), activation='logistic', solver='lbfgs', alpha=1e-05,
-                                       learning_rate_init=0.001,
+        self.neural_network = MLPClassifier(hidden_layer_sizes=(layers), activation='tanh', solver='lbfgs', alpha=1e-05,
+                                       learning_rate_init=0.0001,
                                        random_state=1)
         self.team_name_lookup = self.get_team_name_lookup()
         self.train_neural_network()
@@ -83,7 +83,7 @@ class MadnessPredictor(object):
 
         return training_features, training_targets
 
-    def get_second_data(self, year, isTestData):
+    def get_second_data(self, year, previous_inputs, previous_results, isTestData):
 
         # Connect to db
         client = MongoClient('localhost:27017')
@@ -91,7 +91,13 @@ class MadnessPredictor(object):
 
         training_features = []
         training_targets = []
+        tempList = []
+        for i, winner in enumerate(previous_results):
+            tempList.append(previous_inputs[i][winner])
 
+            if (i % 2 == 1):
+                training_features.append(tempList)
+                tempList = []
 
         temp = db.tournament_stats.find({'Bracket Year': year, 'Round Number': '2'})
         """Pull data from the db and creates training features based on match ups"""
@@ -119,12 +125,12 @@ class MadnessPredictor(object):
                 if (team_one is not None and team_two is not None):
                     # Add them to the data (the two team's stats and who won
                     match_up = (team_one, team_two)
-                    training_features.append(match_up)
+#                    training_features.append(match_up)
                     training_targets.append(match['Winner'])
 
         return training_features, training_targets
 
-    def get_third_data(self, year, isTestData):
+    def get_third_data(self, year, previous_inputs, previous_results, isTestData):
 
         # Connect to db
         client = MongoClient('localhost:27017')
@@ -132,7 +138,13 @@ class MadnessPredictor(object):
 
         training_features = []
         training_targets = []
+        tempList = []
+        for i, winner in enumerate(previous_results):
+            tempList.append(previous_inputs[i][winner])
 
+            if (i % 2 == 1):
+                training_features.append(tempList)
+                tempList = []
 
         temp = db.tournament_stats.find({'Bracket Year': year, 'Round Number': '3'})
         """Pull data from the db and creates training features based on match ups"""
@@ -160,12 +172,11 @@ class MadnessPredictor(object):
                 if (team_one is not None and team_two is not None):
                     # Add them to the data (the two team's stats and who won
                     match_up = (team_one, team_two)
-                    training_features.append(match_up)
                     training_targets.append(match['Winner'])
 
         return training_features, training_targets
 
-    def get_fourth_data(self, year, isTestData):
+    def get_fourth_data(self, year, previous_inputs, previous_results, isTestData):
 
         # Connect to db
         client = MongoClient('localhost:27017')
@@ -173,7 +184,13 @@ class MadnessPredictor(object):
 
         training_features = []
         training_targets = []
+        tempList = []
+        for i, winner in enumerate(previous_results):
+            tempList.append(previous_inputs[i][winner])
 
+            if (i % 2 == 1):
+                training_features.append(tempList)
+                tempList = []
 
         temp = db.tournament_stats.find({'Bracket Year': year, 'Round Number': '4'})
         """Pull data from the db and creates training features based on match ups"""
@@ -201,12 +218,11 @@ class MadnessPredictor(object):
                 if (team_one is not None and team_two is not None):
                     # Add them to the data (the two team's stats and who won
                     match_up = (team_one, team_two)
-                    training_features.append(match_up)
                     training_targets.append(match['Winner'])
 
         return training_features, training_targets
 
-    def get_fifth_data(self, year, isTestData):
+    def get_fifth_data(self, year, previous_inputs, previous_results, isTestData):
 
         # Connect to db
         client = MongoClient('localhost:27017')
@@ -214,7 +230,13 @@ class MadnessPredictor(object):
 
         training_features = []
         training_targets = []
+        tempList = []
+        for i, winner in enumerate(previous_results):
+            tempList.append(previous_inputs[i][winner])
 
+            if (i % 2 == 1):
+                training_features.append(tempList)
+                tempList = []
 
         temp = db.tournament_stats.find({'Bracket Year': year, 'Round Number': '5'})
         """Pull data from the db and creates training features based on match ups"""
@@ -242,12 +264,11 @@ class MadnessPredictor(object):
                 if (team_one is not None and team_two is not None):
                     # Add them to the data (the two team's stats and who won
                     match_up = (team_one, team_two)
-                    training_features.append(match_up)
                     training_targets.append(match['Winner'])
 
         return training_features, training_targets
 
-    def get_sixth_data(self, year, isTestData):
+    def get_sixth_data(self, year, previous_inputs, previous_results, isTestData):
 
         # Connect to db
         client = MongoClient('localhost:27017')
@@ -255,9 +276,15 @@ class MadnessPredictor(object):
 
         training_features = []
         training_targets = []
+        tempList = []
+        for i, winner in enumerate(previous_results):
+            tempList.append(previous_inputs[i][winner])
 
+            if (i % 2 == 1):
+                training_features.append(tempList)
+                tempList = []
 
-        temp = db.tournament_stats.find({'Bracket Year': year, 'Round Number': '5'})
+        temp = db.tournament_stats.find({'Bracket Year': year, 'Round Number': '6'})
         """Pull data from the db and creates training features based on match ups"""
 
 
@@ -283,7 +310,6 @@ class MadnessPredictor(object):
                 if (team_one is not None and team_two is not None):
                     # Add them to the data (the two team's stats and who won
                     match_up = (team_one, team_two)
-                    training_features.append(match_up)
                     training_targets.append(match['Winner'])
 
         return training_features, training_targets
@@ -380,12 +406,7 @@ class MadnessPredictor(object):
             #winnerIndex = self.neural_network.predict(feature)[0]
             #winnerName = match_up[winnerIndex]['Team']
             #print("Predicted: {} | Actual: {}".format(winnerName, training_targets[index]))
-        print("\n          training_features                 \n")
-        for temp in training_features:
-            print(temp)
-        print("\n          NN_inputs                 \n")
-        for temp in nn_inputs:
-            print(temp)
+
 
         ########## Round One ##########
 
@@ -406,9 +427,9 @@ class MadnessPredictor(object):
                 # print("Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
             if predictedWinnerName == actualWinnerName:
                 correct += 1
-                print(index, " correct... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
+                print(index, result, " correct... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
             else:
-                print(index, " wrong... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
+                print(index, result, " wrong... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
 
         ########## Round Two ##########
 
@@ -430,7 +451,8 @@ class MadnessPredictor(object):
                 tempList = []
 
         round_two_results = self.neural_network.predict(round_two)
-        training_features, training_targets = self.get_second_data(year, isTestData=True)
+        training_features, training_targets = self.get_second_data(year, training_features, round_one_results, isTestData=True)
+
 
         print("\n Round Two \n")
 
@@ -445,14 +467,15 @@ class MadnessPredictor(object):
                 # print("Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
             if predictedWinnerName == actualWinnerName:
                 correct += 1
-                print(index, " correct... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
+                print(index, result, " correct... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
             else:
-                print(index, " wrong... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
+                print(index, result, " wrong... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
 
 
         ########## Round Three ##########
 
         round_three = []
+        tempList = []
 
         for i, winner in enumerate(round_two_results):
             temp = []
@@ -469,7 +492,8 @@ class MadnessPredictor(object):
                 tempList = []
 
         round_three_results = self.neural_network.predict(round_three)
-        training_features, training_targets = self.get_third_data(year, isTestData=True)
+        training_features, training_targets = self.get_third_data(year, training_features, round_two_results, isTestData=True)
+
 
         print("\n Round Three \n")
 
@@ -484,15 +508,16 @@ class MadnessPredictor(object):
                 # print("Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
             if predictedWinnerName == actualWinnerName:
                 correct += 1
-                print(index,
+                print(index, result,
                       " correct... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
             else:
-                print(index,
+                print(index, result,
                       " wrong... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
 
         ########## Round Four ##########
 
         round_four = []
+        tempList = []
 
         for i, winner in enumerate(round_three_results):
             temp = []
@@ -509,7 +534,8 @@ class MadnessPredictor(object):
                 tempList = []
 
         round_four_results = self.neural_network.predict(round_four)
-        training_features, training_targets = self.get_fourth_data(year, isTestData=True)
+        training_features, training_targets = self.get_fourth_data(year, training_features, round_three_results, isTestData=True)
+
 
         print("\n Round Four \n")
 
@@ -524,15 +550,16 @@ class MadnessPredictor(object):
                 # print("Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
             if predictedWinnerName == actualWinnerName:
                 correct += 1
-                print(index,
+                print(index, result,
                       " correct... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
             else:
-                print(index,
+                print(index, result,
                       " wrong... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
 
         ########## Round Five ##########
 
         round_five = []
+        tempList = []
 
         for i, winner in enumerate(round_four_results):
             temp = []
@@ -549,7 +576,8 @@ class MadnessPredictor(object):
                 tempList = []
 
         round_five_results = self.neural_network.predict(round_five)
-        training_features, training_targets = self.get_fifth_data(year, isTestData=True)
+        training_features, training_targets = self.get_fifth_data(year, training_features, round_four_results, isTestData=True)
+
 
         print("\n Round Five \n")
 
@@ -564,15 +592,16 @@ class MadnessPredictor(object):
                 # print("Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
             if predictedWinnerName == actualWinnerName:
                 correct += 1
-                print(index,
+                print(index, result,
                       " correct... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
             else:
-                print(index,
+                print(index, result,
                       " wrong... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
 
         ########## Round Six ##########
 
         round_six = []
+        tempList = []
 
         for i, winner in enumerate(round_five_results):
             temp = []
@@ -589,7 +618,8 @@ class MadnessPredictor(object):
                 tempList = []
 
         round_six_results = self.neural_network.predict(round_six)
-        training_features, training_targets = self.get_sixth_data(year, isTestData=True)
+        training_features, training_targets = self.get_sixth_data(year, training_features, round_five_results, isTestData=True)
+
 
         print("\n Round Six \n")
 
@@ -604,10 +634,10 @@ class MadnessPredictor(object):
                 # print("Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
             if predictedWinnerName == actualWinnerName:
                 correct += 1
-                print(index,
+                print(index, result,
                       " correct... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
             else:
-                print(index,
+                print(index, result,
                       " wrong... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
 
 
