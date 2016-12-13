@@ -162,6 +162,68 @@ class MadnessPredictor(object):
             # Train the neural Network
             self.neural_network.fit(nn_inputs, nn_targets)
 
+    def display_bracket(self, match_results, champion):
+        lines = [""] * 32 * 3
+
+        padding = 15
+        round_index = [0, 1, 3, 6, 12, 24]
+        for matchNumber in range(1, 64):
+            if matchNumber < 33:
+                index = round_index[0]
+                lines[index] = match_results[matchNumber][0].ljust(padding, '-')
+                lines[index + 1] = "{}|".format(" " * padding)
+                lines[index + 2] = match_results[matchNumber][1].ljust(padding, '-')
+                round_index[0] += 3
+            if matchNumber > 32 and matchNumber < 49:
+                index = round_index[1]
+                lines[index] += match_results[matchNumber][0].ljust(padding, '-')
+                lines[index + 1] += "{}|".format(" " * padding)
+                lines[index + 2] += "{}|".format(" " * padding)
+                lines[index + 3] += match_results[matchNumber][1].ljust(padding, '-')
+                if matchNumber != 48:
+                    lines[index + 4] += "{}".format(" " * padding)
+                    lines[index + 5] += "{}".format(" " * padding)
+                round_index[1] += 6
+            if matchNumber > 48 and matchNumber < 57:
+                index = round_index[2]
+                lines[index] += match_results[matchNumber][0].ljust(padding, '-')
+                for i in range(1, 6):
+                    lines[index + i] += "{}|".format(" " * padding)
+                lines[index + 6] += match_results[matchNumber][1].ljust(padding, '-')
+                if matchNumber != 56:
+                    for i in range(7, 12):
+                        lines[index + i] += "{}".format(" " * padding)
+                round_index[2] += 12
+            if matchNumber > 56 and matchNumber < 61:
+                index = round_index[3]
+                lines[index] += match_results[matchNumber][0].ljust(padding, '-')
+                for i in range(1, 12):
+                    lines[index + i] += "{}|".format(" " * padding)
+                lines[index + 12] += match_results[matchNumber][1].ljust(padding, '-')
+                if matchNumber != 60:
+                    for i in range(13, 24):
+                        lines[index + i] += "{}".format(" " * padding)
+                round_index[3] += 24
+            if matchNumber > 60 and matchNumber < 63:
+                index = round_index[4]
+                lines[index] += match_results[matchNumber][0].ljust(padding, '-')
+                for i in range(1, 21):
+                    lines[index + i] += "{}|".format(" " * padding)
+                lines[index + 24] += match_results[matchNumber][1].ljust(padding, '-')
+                if matchNumber != 62:
+                    for i in range(25, 48):
+                        lines[index + i] += "{}".format(" " * padding)
+                round_index[4] += 48
+            if matchNumber == 63:
+                lines[22] += match_results[matchNumber][0].ljust(padding, '-')
+                for i in range(1, 48):
+                    lines[22 + i] += "{}|".format(" " * padding)
+                lines[71] += match_results[matchNumber][1].ljust(padding, '-')
+
+        lines[43] += "---{}".format(champion)
+        for line in lines:
+            print(line)
+
     # training_features, training_targets
     def get_next_round_matches(self, bracket_year, round_number, match_results):
         # TODO make connection in object so we dont keep reconnecting
@@ -211,6 +273,8 @@ class MadnessPredictor(object):
         correct = 0
         match_index = 1
         predicted_results = {}
+        all_results_for_display = {}
+        champion = None
         # this will go through rounds 1-6 and do predictions
         for round_number in range(1, 7):
             predictions = self.neural_network.predict(nn_inputs)
@@ -218,8 +282,13 @@ class MadnessPredictor(object):
             round_total = len(predictions)
 
             for index, result in enumerate(predictions):
+                # TODO I could just use the team data here... rather then hitting DB again oops
                 predictedWinnerName = training_features[index][result]['Team']
+                all_results_for_display[match_index] = [training_features[index][0]['Team'], training_features[index][1]['Team']]
                 predicted_results[str(match_index)] = predictedWinnerName
+
+                if round_number == 6:
+                    champion = predictedWinnerName
 
                 actualWinnerName = match_results[str(match_index)]
                 match_index += 1
@@ -251,6 +320,7 @@ class MadnessPredictor(object):
         print("Overall Accuracy {}/{} | {}%".format(correct, 63, overall_accuracy))
         print("CBS score: {}".format(cbs_score))
         print("ESPN score: {}".format(espn_score))
+        self.display_bracket(all_results_for_display, champion)
         return overall_accuracy, espn_score
 
 
@@ -294,6 +364,6 @@ def programmatic_layer_checker():
 
 if __name__ == "__main__":
     print("Starting Neural Network")
-    madnessPredictor = MadnessPredictor([16, 16, 16, 2])
-    madnessPredictor.predict_year('2016', print_team_names=False)
+    madnessPredictor = MadnessPredictor([8, 15, 2])
+    madnessPredictor.predict_year('2016', print_team_names=True)
     #programmatic_layer_checker()
