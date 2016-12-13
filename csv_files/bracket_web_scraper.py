@@ -1,7 +1,13 @@
 from bs4 import BeautifulSoup
 
-def get_oppenent(tableRows, currentRowIndex, roundIndex, result):
-    for i in range(currentRowIndex + 1, 64):
+previous_matches = []
+previous_matches_by_round = [[], [], [], [], [], []]
+def get_oppenent(tableRows, currentRowIndex, roundIndex, result, roundNumber):
+    roundLimits = [1, 4, 8, 16, 32, 64]
+    roundLimit = currentRowIndex + 1 + roundLimits[roundNumber - 1]
+    if roundLimit > 64:
+        roundLimit = 64
+    for i in range(currentRowIndex + 1, roundLimit):
         thisResult = tableRows[i].find_all('td')[roundIndex].get_text()
         if thisResult != 'x':
             parts = thisResult.split('-')
@@ -42,8 +48,11 @@ def loadBracketFromHtml(bracketYear):
             if roundResult == 'x':
                 break
             else:
-                opponent = get_oppenent(parsedRows, i, roundIndex, roundResult)
-                if opponent != "none":
+                opponent = get_oppenent(parsedRows, i, roundIndex, roundResult, roundNumber)
+                if thisTeam in previous_matches_by_round[roundNumber - 1]:
+                    opponent = "none"
+
+                if opponent != "none" and ("{},{}".format(opponent, thisTeam) not in previous_matches):
                     scores = roundResult.split('-')
                     winning_team = ""
                     if int(scores[0]) > int(scores[1]):
@@ -58,9 +67,13 @@ def loadBracketFromHtml(bracketYear):
                     #print("{} | {} | {} | {} | {}".format(bracketYear, roundNumber, thisTeam, opponent, winning_team))
                     csvString = "{},{},{},{},{},{}\n".format(matchNumbers[roundNumber - 1], bracketYear, roundNumber, thisTeam, opponent, winning_team)
                     #print(csvString)
+
+                    previous_matches.append("{},{}".format(thisTeam, opponent))
+                    previous_matches_by_round[roundNumber - 1].append(thisTeam)
+                    previous_matches_by_round[roundNumber - 1].append(opponent)
+
                     file.write(csvString)
                     matchNumbers[roundNumber - 1] += 1
-
 
 for bracketYear in range(2010, 2017):
     print("Loading bracket: {}".format(bracketYear))

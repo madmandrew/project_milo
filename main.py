@@ -3,14 +3,14 @@ from pymongo import MongoClient
 import random
 
 class MadnessPredictor(object):
-    def __init__(self, layers):
+    def __init__(self, layers, training_years):
         # Create the neural network
         # http://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier
         self.neural_network = MLPClassifier(hidden_layer_sizes=(layers), activation='logistic', solver='lbfgs', alpha=1e-05,
                                        learning_rate_init=0.001,
                                        random_state=1, max_iter=1300)
         self.team_name_lookup = self.get_team_name_lookup()
-        self.train_neural_network()
+        self.train_neural_network(training_years=training_years)
 
     def get_team_name_lookup(self):
         teamNameMap = {"N Colorado": "Northern Colorado", "Boston Univ": "Boston College", "VA Commonwealth": "VCU",
@@ -141,9 +141,7 @@ class MadnessPredictor(object):
 
         return input, target
 
-    def train_neural_network(self):
-
-        training_years = ['2011', '2012', '2013', '2014', '2015']
+    def train_neural_network(self, training_years):
 
         for year in training_years:
             training_features, training_targets, match_results = self.get_training_data(year, isTestData=False)
@@ -364,6 +362,6 @@ def programmatic_layer_checker():
 
 if __name__ == "__main__":
     print("Starting Neural Network")
-    madnessPredictor = MadnessPredictor([8, 15, 2])
-    madnessPredictor.predict_year('2016', print_team_names=True)
+    madnessPredictor = MadnessPredictor(layers=[8, 15, 2], training_years=['2011', '2012', '2013', '2015', '2016'])
+    madnessPredictor.predict_year('2014', print_team_names=True)
     #programmatic_layer_checker()

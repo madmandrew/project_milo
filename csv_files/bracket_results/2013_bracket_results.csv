@@ -16,25 +16,24 @@ Match Number,Bracket Year,Round Number,Team 1,Team 2,Winner
 7,2013,1,Creighton,Cincinnati,Creighton
 36,2013,2,Creighton,Duke,Duke
 8,2013,1,Duke,Albany NY,Duke
-51,2013,3,Duke,Miami FL,Duke
 9,2013,1,Gonzaga,Southern Univ,Gonzaga
 37,2013,2,Gonzaga,Wichita St,Wichita St
 10,2013,1,Pittsburgh,Wichita St,Wichita St
-52,2013,3,Wichita St,La Salle,Wichita St
+51,2013,3,Wichita St,La Salle,Wichita St
 58,2013,4,Wichita St,Ohio St,Wichita St
 11,2013,1,Wisconsin,Mississippi,Mississippi
 38,2013,2,Mississippi,La Salle,La Salle
 12,2013,1,Kansas St,La Salle,La Salle
 13,2013,1,Arizona,Belmont,Arizona
 39,2013,2,Arizona,Harvard,Arizona
-53,2013,3,Arizona,Ohio St,Ohio St
+52,2013,3,Arizona,Ohio St,Ohio St
 14,2013,1,New Mexico,Harvard,Harvard
 15,2013,1,Notre Dame,Iowa St,Iowa St
 40,2013,2,Iowa St,Ohio St,Ohio St
 16,2013,1,Ohio St,Iona,Ohio St
 17,2013,1,Kansas,WKU,Kansas
 41,2013,2,Kansas,North Carolina,Kansas
-54,2013,3,Kansas,Michigan,Michigan
+53,2013,3,Kansas,Michigan,Michigan
 18,2013,1,North Carolina,Villanova,North Carolina
 19,2013,1,VA Commonwealth,Akron,VA Commonwealth
 42,2013,2,VA Commonwealth,Michigan,Michigan
@@ -44,13 +43,13 @@ Match Number,Bracket Year,Round Number,Team 1,Team 2,Winner
 21,2013,1,UCLA,Minnesota,Minnesota
 43,2013,2,Minnesota,Florida,Florida
 22,2013,1,Florida,Northwestern LA,Florida
-55,2013,3,Florida,FL Gulf Coast,Florida
+54,2013,3,Florida,FL Gulf Coast,Florida
 23,2013,1,San Diego St,Oklahoma,San Diego St
 44,2013,2,San Diego St,FL Gulf Coast,FL Gulf Coast
 24,2013,1,Georgetown,FL Gulf Coast,FL Gulf Coast
 25,2013,1,Indiana,James Madison,Indiana
 45,2013,2,Indiana,Temple,Indiana
-56,2013,3,Indiana,Syracuse,Syracuse
+55,2013,3,Indiana,Syracuse,Syracuse
 26,2013,1,NC State,Temple,Temple
 27,2013,1,UNLV,California,California
 46,2013,2,California,Syracuse,Syracuse
@@ -59,7 +58,7 @@ Match Number,Bracket Year,Round Number,Team 1,Team 2,Winner
 29,2013,1,Butler,Bucknell,Butler
 47,2013,2,Butler,Marquette,Marquette
 30,2013,1,Marquette,Davidson,Marquette
-57,2013,3,Marquette,Miami FL,Marquette
+56,2013,3,Marquette,Miami FL,Marquette
 31,2013,1,Illinois,Colorado,Illinois
 48,2013,2,Illinois,Miami FL,Miami FL
 32,2013,1,Miami FL,Pacific,Miami FL
