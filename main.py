@@ -247,40 +247,50 @@ class MadnessPredictor(object):
                 training_features = self.get_next_round_matches(bracket_year=year, round_number=(round_number + 1), match_results=predicted_results)
                 nn_inputs = self.get_nn_inputs(training_features, validation_targets)
 
-        print("Overall Accuracy {}/{} | {}%".format(correct, 63, (correct / 63) * 100))
+        overall_accuracy = (correct / 63) * 100
+        print("Overall Accuracy {}/{} | {}%".format(correct, 63, overall_accuracy))
         print("CBS score: {}".format(cbs_score))
         print("ESPN score: {}".format(espn_score))
-        return (correct / 63)
+        return overall_accuracy, espn_score
 
 
 def programmatic_layer_checker():
     accuracy = 0
-    bestLayers = None
-    # for i in range(2, 8):
-    #     for j in range(2, 21):
-    #         layers = [j]*i
-    #         layers.append(2)
-    #         madnessPredictor = MadnessPredictor(layers)
-    #         tempAccuracy = madnessPredictor.predict_year('2016')
-    #         print("{} accuracy = {}%".format(layers, (tempAccuracy * 100)))
-    #         if (tempAccuracy > accuracy):
-    #             accuracy = tempAccuracy
-    #             bestLayers = layers
-
-    for iteration in range(1, 50):
-        for i in range(3, 8):
-            layers = []
-            for j in range(1, i):
-                layers.append(random.randint(1, 20))
+    best_accuracy_layers = None
+    best_espn_score = 0
+    best_espn_layers = None
+    for i in range(2, 8):
+        for j in range(2, 21):
+            layers = [j]*i
             layers.append(2)
             madnessPredictor = MadnessPredictor(layers)
-            tempAccuracy = madnessPredictor.predict_year('2016', print_team_names=False)
-            print("{} accuracy = {}%".format(layers, (tempAccuracy * 100)))
+            tempAccuracy, tempEspnScore = madnessPredictor.predict_year('2016', print_team_names=False)
+            print("{} accuracy = {}%".format(layers, (tempAccuracy)))
             if (tempAccuracy > accuracy):
                 accuracy = tempAccuracy
-                bestLayers = layers
+                best_accuracy_layers = layers
+            if (tempEspnScore > best_espn_score):
+                best_espn_score = tempEspnScore
+                best_espn_layers = layers
 
-    print("Best accuracy: {} | Layers = {}".format(accuracy, bestLayers))
+    # for iteration in range(1, 50):
+    #     for i in range(3, 8):
+    #         layers = []
+    #         for j in range(1, i):
+    #             layers.append(random.randint(1, 20))
+    #         layers.append(2)
+    #         madnessPredictor = MadnessPredictor(layers)
+    #         tempAccuracy, tempEspnScore = madnessPredictor.predict_year('2016', print_team_names=False)
+    #         if (tempAccuracy > accuracy):
+    #             accuracy = tempAccuracy
+    #             best_accuracy_layers = layers
+    #         if (tempEspnScore > best_espn_score):
+    #             best_espn_score = tempEspnScore
+    #             best_espn_layers = layers
+
+    print("Best accuracy: {} | Layers = {}".format(accuracy, best_accuracy_layers))
+    print("Best ESPN Score: {} | Layers = {}".format(best_espn_score, best_espn_layers))
+
 
 if __name__ == "__main__":
     print("Starting Neural Network")
