@@ -6,9 +6,9 @@ class MadnessPredictor(object):
     def __init__(self, layers):
         # Create the neural network
         # http://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier
-        self.neural_network = MLPClassifier(hidden_layer_sizes=(layers), activation='tanh', solver='lbfgs', alpha=1e-05,
-                                       learning_rate_init=0.0001,
-                                       random_state=1)
+        self.neural_network = MLPClassifier(hidden_layer_sizes=(layers), activation='logistic', solver='lbfgs', alpha=1e-05,
+                                       learning_rate_init=0.001,
+                                       random_state=1, max_iter=1300)
         self.team_name_lookup = self.get_team_name_lookup()
         self.train_neural_network()
 
@@ -56,7 +56,7 @@ class MadnessPredictor(object):
         temp = db.tournament_stats.find({'Bracket Year': year})
         """Pull data from the db and creates training features based on match ups"""
 
-
+        match_results = {}
         # For each match in march madness of the given year (find all the teams that played in the tournament that year)
         for match in db.tournament_stats.find({'Bracket Year': year}):
             # if its training data we only grab first round matches
@@ -80,239 +80,9 @@ class MadnessPredictor(object):
                     match_up = (team_one, team_two)
                     training_features.append(match_up)
                     training_targets.append(match['Winner'])
+                    match_results[match['Match Number']] = match['Winner']
 
-        return training_features, training_targets
-
-    def get_second_data(self, year, previous_inputs, previous_results, isTestData):
-
-        # Connect to db
-        client = MongoClient('localhost:27017')
-        db = client.march_madness
-
-        training_features = []
-        training_targets = []
-        tempList = []
-        for i, winner in enumerate(previous_results):
-            tempList.append(previous_inputs[i][winner])
-
-            if (i % 2 == 1):
-                training_features.append(tempList)
-                tempList = []
-
-        temp = db.tournament_stats.find({'Bracket Year': year, 'Round Number': '2'})
-        """Pull data from the db and creates training features based on match ups"""
-
-
-
-        # For each match in march madness of the given year (find all the teams that played in the tournament that year)
-        for match in db.tournament_stats.find({'Bracket Year': year}):
-            # if its training data we only grab first round matches
-            if (int(match['Match Number']) < 49 and int(match['Match Number']) > 32):
-
-                team_name_one = self.team_name_lookup[match['Team 1']] if match['Team 1'] in self.team_name_lookup else match['Team 1']
-                team_name_two = self.team_name_lookup[match['Team 2']] if match['Team 2'] in self.team_name_lookup else match['Team 2']
-
-                # Grab the regular season stats of the two teams that played each other
-                team_one = db.reg_season_stats.find_one({'Year': year, "Team": team_name_one})
-                team_two = db.reg_season_stats.find_one({'Year': year, "Team": team_name_two})
-
-                if team_one is None:
-                    print(match['Team 1'])
-                if team_two is None:
-                    print(match['Team 2'])
-
-                # Make sure they were actually playing each other that round
-                if (team_one is not None and team_two is not None):
-                    # Add them to the data (the two team's stats and who won
-                    match_up = (team_one, team_two)
-#                    training_features.append(match_up)
-                    training_targets.append(match['Winner'])
-
-        return training_features, training_targets
-
-    def get_third_data(self, year, previous_inputs, previous_results, isTestData):
-
-        # Connect to db
-        client = MongoClient('localhost:27017')
-        db = client.march_madness
-
-        training_features = []
-        training_targets = []
-        tempList = []
-        for i, winner in enumerate(previous_results):
-            tempList.append(previous_inputs[i][winner])
-
-            if (i % 2 == 1):
-                training_features.append(tempList)
-                tempList = []
-
-        temp = db.tournament_stats.find({'Bracket Year': year, 'Round Number': '3'})
-        """Pull data from the db and creates training features based on match ups"""
-
-
-
-        # For each match in march madness of the given year (find all the teams that played in the tournament that year)
-        for match in db.tournament_stats.find({'Bracket Year': year}):
-            # if its training data we only grab first round matches
-            if (int(match['Match Number']) < 57 and int(match['Match Number']) > 48):
-
-                team_name_one = self.team_name_lookup[match['Team 1']] if match['Team 1'] in self.team_name_lookup else match['Team 1']
-                team_name_two = self.team_name_lookup[match['Team 2']] if match['Team 2'] in self.team_name_lookup else match['Team 2']
-
-                # Grab the regular season stats of the two teams that played each other
-                team_one = db.reg_season_stats.find_one({'Year': year, "Team": team_name_one})
-                team_two = db.reg_season_stats.find_one({'Year': year, "Team": team_name_two})
-
-                if team_one is None:
-                    print(match['Team 1'])
-                if team_two is None:
-                    print(match['Team 2'])
-
-                # Make sure they were actually playing each other that round
-                if (team_one is not None and team_two is not None):
-                    # Add them to the data (the two team's stats and who won
-                    match_up = (team_one, team_two)
-                    training_targets.append(match['Winner'])
-
-        return training_features, training_targets
-
-    def get_fourth_data(self, year, previous_inputs, previous_results, isTestData):
-
-        # Connect to db
-        client = MongoClient('localhost:27017')
-        db = client.march_madness
-
-        training_features = []
-        training_targets = []
-        tempList = []
-        for i, winner in enumerate(previous_results):
-            tempList.append(previous_inputs[i][winner])
-
-            if (i % 2 == 1):
-                training_features.append(tempList)
-                tempList = []
-
-        temp = db.tournament_stats.find({'Bracket Year': year, 'Round Number': '4'})
-        """Pull data from the db and creates training features based on match ups"""
-
-
-
-        # For each match in march madness of the given year (find all the teams that played in the tournament that year)
-        for match in db.tournament_stats.find({'Bracket Year': year}):
-            # if its training data we only grab first round matches
-            if (int(match['Match Number']) < 61 and int(match['Match Number']) > 56):
-
-                team_name_one = self.team_name_lookup[match['Team 1']] if match['Team 1'] in self.team_name_lookup else match['Team 1']
-                team_name_two = self.team_name_lookup[match['Team 2']] if match['Team 2'] in self.team_name_lookup else match['Team 2']
-
-                # Grab the regular season stats of the two teams that played each other
-                team_one = db.reg_season_stats.find_one({'Year': year, "Team": team_name_one})
-                team_two = db.reg_season_stats.find_one({'Year': year, "Team": team_name_two})
-
-                if team_one is None:
-                    print(match['Team 1'])
-                if team_two is None:
-                    print(match['Team 2'])
-
-                # Make sure they were actually playing each other that round
-                if (team_one is not None and team_two is not None):
-                    # Add them to the data (the two team's stats and who won
-                    match_up = (team_one, team_two)
-                    training_targets.append(match['Winner'])
-
-        return training_features, training_targets
-
-    def get_fifth_data(self, year, previous_inputs, previous_results, isTestData):
-
-        # Connect to db
-        client = MongoClient('localhost:27017')
-        db = client.march_madness
-
-        training_features = []
-        training_targets = []
-        tempList = []
-        for i, winner in enumerate(previous_results):
-            tempList.append(previous_inputs[i][winner])
-
-            if (i % 2 == 1):
-                training_features.append(tempList)
-                tempList = []
-
-        temp = db.tournament_stats.find({'Bracket Year': year, 'Round Number': '5'})
-        """Pull data from the db and creates training features based on match ups"""
-
-
-
-        # For each match in march madness of the given year (find all the teams that played in the tournament that year)
-        for match in db.tournament_stats.find({'Bracket Year': year}):
-            # if its training data we only grab first round matches
-            if (int(match['Match Number']) < 63 and int(match['Match Number']) > 60):
-
-                team_name_one = self.team_name_lookup[match['Team 1']] if match['Team 1'] in self.team_name_lookup else match['Team 1']
-                team_name_two = self.team_name_lookup[match['Team 2']] if match['Team 2'] in self.team_name_lookup else match['Team 2']
-
-                # Grab the regular season stats of the two teams that played each other
-                team_one = db.reg_season_stats.find_one({'Year': year, "Team": team_name_one})
-                team_two = db.reg_season_stats.find_one({'Year': year, "Team": team_name_two})
-
-                if team_one is None:
-                    print(match['Team 1'])
-                if team_two is None:
-                    print(match['Team 2'])
-
-                # Make sure they were actually playing each other that round
-                if (team_one is not None and team_two is not None):
-                    # Add them to the data (the two team's stats and who won
-                    match_up = (team_one, team_two)
-                    training_targets.append(match['Winner'])
-
-        return training_features, training_targets
-
-    def get_sixth_data(self, year, previous_inputs, previous_results, isTestData):
-
-        # Connect to db
-        client = MongoClient('localhost:27017')
-        db = client.march_madness
-
-        training_features = []
-        training_targets = []
-        tempList = []
-        for i, winner in enumerate(previous_results):
-            tempList.append(previous_inputs[i][winner])
-
-            if (i % 2 == 1):
-                training_features.append(tempList)
-                tempList = []
-
-        temp = db.tournament_stats.find({'Bracket Year': year, 'Round Number': '6'})
-        """Pull data from the db and creates training features based on match ups"""
-
-
-
-        # For each match in march madness of the given year (find all the teams that played in the tournament that year)
-        for match in db.tournament_stats.find({'Bracket Year': year}):
-            # if its training data we only grab first round matches
-            if (int(match['Match Number']) < 64 and int(match['Match Number']) > 62):
-
-                team_name_one = self.team_name_lookup[match['Team 1']] if match['Team 1'] in self.team_name_lookup else match['Team 1']
-                team_name_two = self.team_name_lookup[match['Team 2']] if match['Team 2'] in self.team_name_lookup else match['Team 2']
-
-                # Grab the regular season stats of the two teams that played each other
-                team_one = db.reg_season_stats.find_one({'Year': year, "Team": team_name_one})
-                team_two = db.reg_season_stats.find_one({'Year': year, "Team": team_name_two})
-
-                if team_one is None:
-                    print(match['Team 1'])
-                if team_two is None:
-                    print(match['Team 2'])
-
-                # Make sure they were actually playing each other that round
-                if (team_one is not None and team_two is not None):
-                    # Add them to the data (the two team's stats and who won
-                    match_up = (team_one, team_two)
-                    training_targets.append(match['Winner'])
-
-        return training_features, training_targets
+        return training_features, training_targets, match_results
 
     def convert_and_order_data(self, feature, target):
         """
@@ -376,7 +146,7 @@ class MadnessPredictor(object):
         training_years = ['2011', '2012', '2013', '2014', '2015']
 
         for year in training_years:
-            training_features, training_targets = self.get_training_data(year, isTestData=False)
+            training_features, training_targets, match_results = self.get_training_data(year, isTestData=False)
 
             nn_inputs = []
             nn_targets = []
@@ -392,259 +162,95 @@ class MadnessPredictor(object):
             # Train the neural Network
             self.neural_network.fit(nn_inputs, nn_targets)
 
-    def predict_year(self, year, print_team_names):
+    # training_features, training_targets
+    def get_next_round_matches(self, bracket_year, round_number, match_results):
+        # TODO make connection in object so we dont keep reconnecting
+        client = MongoClient('localhost:27017')
+        db = client.march_madness
 
-        training_features, training_targets = self.get_training_data(year, isTestData=True)
+        training_features = []
 
-        validation_features, validation_targets = self.get_training_data(year, isTestData=False)
+        matchNumbers = [1, 33, 49, 57, 61, 63, 64]
+        previous_match_number = matchNumbers[round_number - 2]
+        for currentMatchNumber in range(matchNumbers[round_number - 1], matchNumbers[round_number]):
+            team_name_1 = match_results[str(previous_match_number)]
+            previous_match_number += 1
+            team_name_2 = match_results[str(previous_match_number)]
+            previous_match_number += 1
 
+            team_1 = db.reg_season_stats.find_one({'Year': bracket_year, "Team": team_name_1})
+            team_2 = db.reg_season_stats.find_one({'Year': bracket_year, "Team": team_name_2})
+
+            if team_1 is None:
+                print("Error: {} missing".format(team_name_1))
+            if team_2 is None:
+                print("Error: {} missing".format(team_name_2))
+
+            match_up = (team_1, team_2)
+            training_features.append(match_up)
+
+        return training_features
+
+    def get_nn_inputs(self, training_features, training_targets):
         nn_inputs = []
         for index, match_up in enumerate(training_features):
             feature, target = self.convert_and_order_data(match_up, training_targets[index])
             # Set it to send to the neural network
             nn_inputs.append(feature)
-            #winnerIndex = self.neural_network.predict(feature)[0]
-            #winnerName = match_up[winnerIndex]['Team']
-            #print("Predicted: {} | Actual: {}".format(winnerName, training_targets[index]))
+        return nn_inputs
 
+    def predict_year(self, year, print_team_names):
+        training_features, training_targets, match_results = self.get_training_data(year, isTestData=True)
+        validation_features, validation_targets, match_results = self.get_training_data(year, isTestData=False)
 
-        ########## Round One ##########
-
-        round_one_results = self.neural_network.predict(nn_inputs)
+        nn_inputs = self.get_nn_inputs(training_features, training_targets)
+        cbs_score_index = [1, 2, 4, 8, 16, 32]
+        cbs_score = 0
+        espn_score_index = [10, 20, 40, 80, 160, 320]
+        espn_score = 0
         correct = 0
-        total = len(round_one_results)
+        match_index = 1
+        predicted_results = {}
+        # this will go through rounds 1-6 and do predictions
+        for round_number in range(1, 7):
+            predictions = self.neural_network.predict(nn_inputs)
+            round_correct = 0
+            round_total = len(predictions)
 
-        print("\n Round One \n")
+            for index, result in enumerate(predictions):
+                predictedWinnerName = training_features[index][result]['Team']
+                predicted_results[str(match_index)] = predictedWinnerName
 
-        for index, result in enumerate(round_one_results):
-            predictedWinnerName = training_features[index][result]['Team']
-            actualWinnerName = training_targets[index]
-            if actualWinnerName in self.team_name_lookup:
-                actualWinnerName = self.team_name_lookup[actualWinnerName]
+                actualWinnerName = match_results[str(match_index)]
+                match_index += 1
 
-            if (print_team_names):
-                pass
-                # print("Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
-            if predictedWinnerName == actualWinnerName:
-                correct += 1
-                print(index, result, " correct... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
-            else:
-                print(index, result, " wrong... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
+                if actualWinnerName in self.team_name_lookup:
+                    actualWinnerName = self.team_name_lookup[actualWinnerName]
 
-        ########## Round Two ##########
+                prediction_result = "--"
+                if predictedWinnerName == actualWinnerName:
+                    cbs_score += cbs_score_index[round_number - 1]
+                    espn_score += espn_score_index[round_number - 1]
+                    correct += 1
+                    round_correct += 1
+                    prediction_result = "++"
 
-        round_two = []
-
-        tempList = []
-        for i, winner in enumerate(round_one_results):
-            temp = []
-            if (winner == 0):
-                temp = nn_inputs[i][:20]
-            else:
-                temp = nn_inputs[i][20:]
-
-            for list in temp:
-                tempList.append(list)
-
-            if (i % 2 == 1):
-                round_two.append(tempList)
-                tempList = []
-
-        round_two_results = self.neural_network.predict(round_two)
-        training_features, training_targets = self.get_second_data(year, training_features, round_one_results, isTestData=True)
-
-
-        print("\n Round Two \n")
-
-        for index, result in enumerate(round_two_results):
-            predictedWinnerName = training_features[index][result]['Team']
-            actualWinnerName = training_targets[index]
-            if actualWinnerName in self.team_name_lookup:
-                actualWinnerName = self.team_name_lookup[actualWinnerName]
+                if (print_team_names):
+                    print("{}, {}, Predicted: {} | Actual {}".format(result, prediction_result, predictedWinnerName, actualWinnerName))
 
             if (print_team_names):
-                pass
-                # print("Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
-            if predictedWinnerName == actualWinnerName:
-                correct += 1
-                print(index, result, " correct... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
+                print("\nRound {} Accuracy {}/{} | {}%\n".format(round_number, round_correct, round_total, (round_correct / round_total) * 100))
             else:
-                print(index, result, " wrong... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
+                print("Round {} Accuracy {}/{} | {}%".format(round_number, round_correct, round_total, (round_correct / round_total) * 100))
 
+            if round_number != 6:
+                training_features = self.get_next_round_matches(bracket_year=year, round_number=(round_number + 1), match_results=predicted_results)
+                nn_inputs = self.get_nn_inputs(training_features, validation_targets)
 
-        ########## Round Three ##########
-
-        round_three = []
-        tempList = []
-
-        for i, winner in enumerate(round_two_results):
-            temp = []
-            if (winner == 0):
-                temp = round_two[i][:20]
-            else:
-                temp = round_two[i][20:]
-
-            for list in temp:
-                tempList.append(list)
-
-            if (i % 2 == 1):
-                round_three.append(tempList)
-                tempList = []
-
-        round_three_results = self.neural_network.predict(round_three)
-        training_features, training_targets = self.get_third_data(year, training_features, round_two_results, isTestData=True)
-
-
-        print("\n Round Three \n")
-
-        for index, result in enumerate(round_three_results):
-            predictedWinnerName = training_features[index][result]['Team']
-            actualWinnerName = training_targets[index]
-            if actualWinnerName in self.team_name_lookup:
-                actualWinnerName = self.team_name_lookup[actualWinnerName]
-
-            if (print_team_names):
-                pass
-                # print("Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
-            if predictedWinnerName == actualWinnerName:
-                correct += 1
-                print(index, result,
-                      " correct... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
-            else:
-                print(index, result,
-                      " wrong... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
-
-        ########## Round Four ##########
-
-        round_four = []
-        tempList = []
-
-        for i, winner in enumerate(round_three_results):
-            temp = []
-            if (winner == 0):
-                temp = round_three[i][:20]
-            else:
-                temp = round_three[i][20:]
-
-            for list in temp:
-                tempList.append(list)
-
-            if (i % 2 == 1):
-                round_four.append(tempList)
-                tempList = []
-
-        round_four_results = self.neural_network.predict(round_four)
-        training_features, training_targets = self.get_fourth_data(year, training_features, round_three_results, isTestData=True)
-
-
-        print("\n Round Four \n")
-
-        for index, result in enumerate(round_four_results):
-            predictedWinnerName = training_features[index][result]['Team']
-            actualWinnerName = training_targets[index]
-            if actualWinnerName in self.team_name_lookup:
-                actualWinnerName = self.team_name_lookup[actualWinnerName]
-
-            if (print_team_names):
-                pass
-                # print("Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
-            if predictedWinnerName == actualWinnerName:
-                correct += 1
-                print(index, result,
-                      " correct... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
-            else:
-                print(index, result,
-                      " wrong... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
-
-        ########## Round Five ##########
-
-        round_five = []
-        tempList = []
-
-        for i, winner in enumerate(round_four_results):
-            temp = []
-            if (winner == 0):
-                temp = round_four[i][:20]
-            else:
-                temp = round_four[i][20:]
-
-            for list in temp:
-                tempList.append(list)
-
-            if (i % 2 == 1):
-                round_five.append(tempList)
-                tempList = []
-
-        round_five_results = self.neural_network.predict(round_five)
-        training_features, training_targets = self.get_fifth_data(year, training_features, round_four_results, isTestData=True)
-
-
-        print("\n Round Five \n")
-
-        for index, result in enumerate(round_five_results):
-            predictedWinnerName = training_features[index][result]['Team']
-            actualWinnerName = training_targets[index]
-            if actualWinnerName in self.team_name_lookup:
-                actualWinnerName = self.team_name_lookup[actualWinnerName]
-
-            if (print_team_names):
-                pass
-                # print("Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
-            if predictedWinnerName == actualWinnerName:
-                correct += 1
-                print(index, result,
-                      " correct... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
-            else:
-                print(index, result,
-                      " wrong... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
-
-        ########## Round Six ##########
-
-        round_six = []
-        tempList = []
-
-        for i, winner in enumerate(round_five_results):
-            temp = []
-            if (winner == 0):
-                temp = round_five[i][:20]
-            else:
-                temp = round_five[i][20:]
-
-            for list in temp:
-                tempList.append(list)
-
-            if (i % 2 == 1):
-                round_six.append(tempList)
-                tempList = []
-
-        round_six_results = self.neural_network.predict(round_six)
-        training_features, training_targets = self.get_sixth_data(year, training_features, round_five_results, isTestData=True)
-
-
-        print("\n Round Six \n")
-
-        for index, result in enumerate(round_six_results):
-            predictedWinnerName = training_features[index][result]['Team']
-            actualWinnerName = training_targets[index]
-            if actualWinnerName in self.team_name_lookup:
-                actualWinnerName = self.team_name_lookup[actualWinnerName]
-
-            if (print_team_names):
-                pass
-                # print("Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
-            if predictedWinnerName == actualWinnerName:
-                correct += 1
-                print(index, result,
-                      " correct... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
-            else:
-                print(index, result,
-                      " wrong... Predicted: {} | Actual: {}".format(predictedWinnerName, actualWinnerName))
-
-
-
-        total = len(round_one_results) + len(round_two_results) + len(round_three_results) + len(round_four_results) + len(round_five_results)+ len(round_six_results)
-        print("{} / {} correct {}%".format(correct, total, (correct / total) * 100))
-        return (correct / total)
+        print("Overall Accuracy {}/{} | {}%".format(correct, 63, (correct / 63) * 100))
+        print("CBS score: {}".format(cbs_score))
+        print("ESPN score: {}".format(espn_score))
+        return (correct / 63)
 
 
 def programmatic_layer_checker():
@@ -679,5 +285,5 @@ def programmatic_layer_checker():
 if __name__ == "__main__":
     print("Starting Neural Network")
     madnessPredictor = MadnessPredictor([16, 16, 16, 2])
-    madnessPredictor.predict_year('2016', print_team_names=True)
+    madnessPredictor.predict_year('2016', print_team_names=False)
     #programmatic_layer_checker()
