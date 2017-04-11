@@ -26,13 +26,21 @@ def loadBracketFromHtml(bracketYear):
     del tableRows[0]
     del tableRows[0]
 
+    # parsedRows = []
+    # for row in tableRows:
+    #     cells = row.find_all('td')
+    #     if len(cells) > 8:
+    #         round1 = cells[9].get_text()
+    #         if '-' in round1:
+    #             parsedRows.append(row)
+
     parsedRows = []
-    for row in tableRows:
+    for i in range(0,68):
+        row = soup.find('tr', attrs={'data-idx' : i})
         cells = row.find_all('td')
-        if len(cells) > 8:
-            round1 = cells[9].get_text()
-            if '-' in round1:
-                parsedRows.append(row)
+        round1 = cells[9].get_text()
+        if '-' in round1:
+            parsedRows.append(row)
 
     file = open("{}project_milo\\csv_files\\bracket_results\\{}_bracket_results.csv".format(relativePath, bracketYear), "w")
     file.write("Match Number,Bracket Year,Round Number,Team 1,Team 2,Winner\n")
@@ -75,6 +83,6 @@ def loadBracketFromHtml(bracketYear):
                     file.write(csvString)
                     matchNumbers[roundNumber - 1] += 1
 
-for bracketYear in range(2010, 2017):
+for bracketYear in range(2017, 2018):
     print("Loading bracket: {}".format(bracketYear))
     loadBracketFromHtml(bracketYear)

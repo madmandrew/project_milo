@@ -40,7 +40,8 @@ class MadnessPredictor(object):
                        "Colorado St": "Colorado State",
                        "Norfolk St": "Norfolk State", "Ohio St": "Ohio State", "Oklahoma St": "Oklahoma State",
                        "Weber St": "Weber State", "Arizona St": "Arizona State", "Georgia St": "Georgia State",
-                       "Oregon St": "Oregon State", "Fresno St": "Fresno State"}
+                       "Oregon St": "Oregon State", "Fresno St": "Fresno State", "ETSU": "East Tennessee State",
+                       "Jacksonville St": "Jacksonville State", "Kent": "Kent State", "N Kentucky": "Northern Kentucky"}
         return teamNameMap
 
     def get_training_data(self, year, isTestData):
@@ -163,7 +164,7 @@ class MadnessPredictor(object):
     def display_bracket(self, match_results, champion):
         lines = [""] * 32 * 3
 
-        padding = 15
+        padding = 17
         round_index = [0, 1, 3, 6, 12, 24]
         for matchNumber in range(1, 64):
             if matchNumber < 33:
@@ -259,7 +260,7 @@ class MadnessPredictor(object):
             nn_inputs.append(feature)
         return nn_inputs
 
-    def predict_year(self, year, print_team_names):
+    def predict_year(self, year, print_team_names, print_bracket):
         training_features, training_targets, match_results = self.get_training_data(year, isTestData=True)
         validation_features, validation_targets, match_results = self.get_training_data(year, isTestData=False)
 
@@ -314,11 +315,14 @@ class MadnessPredictor(object):
                 training_features = self.get_next_round_matches(bracket_year=year, round_number=(round_number + 1), match_results=predicted_results)
                 nn_inputs = self.get_nn_inputs(training_features, validation_targets)
 
+        if print_bracket:
+            self.display_bracket(all_results_for_display, champion)
+
         overall_accuracy = (correct / 63) * 100
-        print("Overall Accuracy {}/{} | {}%".format(correct, 63, overall_accuracy))
+        print("\nOverall Accuracy {}/{} | {}%".format(correct, 63, overall_accuracy))
         print("CBS score: {}".format(cbs_score))
         print("ESPN score: {}".format(espn_score))
-        self.display_bracket(all_results_for_display, champion)
+
         return overall_accuracy, espn_score
 
 
@@ -331,8 +335,8 @@ def programmatic_layer_checker():
         for j in range(2, 21):
             layers = [j]*i
             layers.append(2)
-            madnessPredictor = MadnessPredictor(layers)
-            tempAccuracy, tempEspnScore = madnessPredictor.predict_year('2016', print_team_names=False)
+            madnessPredictor = MadnessPredictor(layers, training_years=['2011', '2012', '2013', '2014', '2015'])
+            tempAccuracy, tempEspnScore = madnessPredictor.predict_year('2016', print_team_names=False, print_bracket=False)
             print("{} accuracy = {}%".format(layers, (tempAccuracy)))
             if (tempAccuracy > accuracy):
                 accuracy = tempAccuracy
@@ -362,6 +366,6 @@ def programmatic_layer_checker():
 
 if __name__ == "__main__":
     print("Starting Neural Network")
-    madnessPredictor = MadnessPredictor(layers=[8, 15, 2], training_years=['2011', '2012', '2013', '2015', '2016'])
-    madnessPredictor.predict_year('2014', print_team_names=True)
+    madnessPredictor = MadnessPredictor(layers=[8, 8, 15, 2], training_years=['2011', '2012', '2013', '2014', '2016'])
+    madnessPredictor.predict_year('2017', print_team_names=False, print_bracket=True)
     #programmatic_layer_checker()

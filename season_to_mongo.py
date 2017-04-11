@@ -11,7 +11,8 @@ csv_files = ['./csv_files/season_files/2011_team_season.csv',
              './csv_files/season_files/2013_team_season.csv',
              './csv_files/season_files/2014_team_season.csv',
              './csv_files/season_files/2015_team_season.csv',
-             './csv_files/season_files/2016_team_season.csv']
+             './csv_files/season_files/2016_team_season.csv',
+             './csv_files/season_files/2017_team_season.csv']
 
 for file in csv_files:
     with open(file) as csvfile:
@@ -19,5 +20,5 @@ for file in csv_files:
         for document in reader:
             pass
             # Does this document already exist?
-            if db.reg_season_stats.find_one({"Year": file[42:51], "School": document["Team"]}) == None:
+            if db.reg_season_stats.find_one({"Year": file[25:29], "Team": document["Team"]}) == None:
                 db.reg_season_stats.insert(document)

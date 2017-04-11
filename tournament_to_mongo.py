@@ -9,7 +9,8 @@ csv_files = ['./csv_files/bracket_results/2010_bracket_results.csv',
              './csv_files/bracket_results/2013_bracket_results.csv',
              './csv_files/bracket_results/2014_bracket_results.csv',
              './csv_files/bracket_results/2015_bracket_results.csv',
-             './csv_files/bracket_results/2016_bracket_results.csv']
+             './csv_files/bracket_results/2016_bracket_results.csv',
+             './csv_files/bracket_results/2017_bracket_results.csv']
 
 client = MongoClient('localhost:27017')
 db = client.march_madness

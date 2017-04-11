@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 
 # config variables...
-bracketYear = 2016  # end of the season year ie 2015-2016 is 2016 bracket year
+bracketYear = 2017  # end of the season year ie 2015-2016 is 2016 bracket year
 file_type = "opposition_season"
 table_id = "2459"  # the randomly generated id that is assigned to the table in html
 path_to_project = "C:\\Users\\andrew\\PycharmProjects\\"
